@@ -1,3 +1,6 @@
+1. Etter å ha klonet prosjektet, skriv kommandoen "cd prosjekt_2" i terminalen. 
+2. Skriv deretter "npm start" for å starte nettsiden på en lokal webserver og åpne nettsiden.
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
