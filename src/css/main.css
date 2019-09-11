@@ -1,0 +1,42 @@
+/* Color codes:
+  Primary: #BB86FC
+    Dark primary: #1F1B24
+    Primary Variant: #3700B3
+  Secondary: #03DAC6
+  Dark grey (surface): #121212
+  On primary, seconday and error: white (#000000)
+  On background and surface: black (#FFFFFF)
+  Error color: #CF6679
+ */
+
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  /* background-color: #121212; */
+  background-color: #1F1B24;
+  color: white;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
+    monospace;
+}
+
+.header-container{
+  display: flex;
+  justify-content: center;
+  /* background-color: #1F1B24; */
+  background-color: #121212;
+}
+
+@import url('https://fonts.googleapis.com/css?family=Josefin+Sans&display=swap');
+.header {
+  font-family: 'Josefin Sans', sans-serif;
+  font-size: 36px;
+  color: white;
+
+}
