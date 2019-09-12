@@ -1,0 +1,50 @@
+{
+  "components": {
+    "Header": {},
+    "Tab": {
+      "attributes": [
+        "activeTab",
+        "label",
+        "onClick"
+      ],
+      "props": {
+        "activeTab": {
+          "type": {
+            "name": "string"
+          },
+          "required": true,
+          "description": ""
+        },
+        "label": {
+          "type": {
+            "name": "string"
+          },
+          "required": true,
+          "description": ""
+        },
+        "onClick": {
+          "type": {
+            "name": "func"
+          },
+          "required": true,
+          "description": ""
+        }
+      }
+    },
+    "Tabs": {
+      "attributes": [
+        "children"
+      ],
+      "props": {
+        "children": {
+          "type": {
+            "name": "instanceOf",
+            "value": "Array"
+          },
+          "required": true,
+          "description": ""
+        }
+      }
+    }
+  }
+}

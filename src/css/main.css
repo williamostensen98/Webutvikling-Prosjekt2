@@ -40,3 +40,45 @@ code {
   color: white;
 
 }
+
+.tabs {
+  width: 90%;
+
+}
+
+.tab-list {
+  border-bottom: 1px solid #ccc;
+  padding-left: 0;
+  display: flex;
+}
+
+.tab-list-item {
+  display: inline-block;
+  list-style: none;
+  margin-bottom: -1px;
+  border-right: 1px solid #ccc;
+  padding: 0.5rem 0.75rem;
+  flex:auto;
+  justify-content: space-around;
+  cursor: pointer;
+}
+
+
+.tab-list-active {
+  border: solid #ccc;
+  border-width: 1px 1px 0 1px;
+  background-color: #121212;
+  cursor: auto;
+}
+
+.tab-content {
+  justify-content: center;
+}
+
+.tabs {
+}
+
+.main-content {
+  display: flex;
+  justify-content: center;
+}

@@ -13,7 +13,7 @@ class Header extends Component {
             <div className="header-container">
                 <header className="header">
                     <h1>
-                        {text}
+                        {this.props.headerText}
                     </h1>
                 </header>
             </div>
