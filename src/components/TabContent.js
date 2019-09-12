@@ -12,13 +12,12 @@ class TabContent extends Component {
     render() {
         return(
             <div className="tab-content-container">
-                <svg viewBox="0 0 100 100">
+                <svg viewBox="0 0 200 200">
                     <circle
-                        id="bigCirc"
-                        cx="50"
-                        cy="0"
-                        r="50"
-                        fill="#03DAC6"
+                        cx={this.props.cx}
+                        cy={this.props.cy}
+                        r={this.props.r}
+                        fill={this.props.fill}
                     />
                 </svg>
             </div>

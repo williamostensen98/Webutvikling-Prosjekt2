@@ -13,11 +13,19 @@ class Tabs extends Component {
         this.state = {
             activeTab: this.props.children[0].props.label,
         };
+        this.onClickTabItem = this.onClickTabItem.bind(this)
     }
 
-    onClickTabItem = (tab) => {
+    onClickTabItem(tab) {
         this.setState({ activeTab: tab });
     }
+
+    // onClickTabItem as an arrow function:
+    // onClickTabItem = (tab) => {
+    //     this.setState({ activeTab: tab });
+    // }
+    // The advantage of writing the method as an arrow function is that you dont have to bind the function in the constructor
+
     render() {
         const {
           onClickTabItem,

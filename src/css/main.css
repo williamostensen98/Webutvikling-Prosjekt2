@@ -19,6 +19,8 @@ body {
   /* background-color: #121212; */
   background-color: #1F1B24;
   color: white;
+  display: flex;
+  flex-direction: column;
 }
 
 code {
@@ -31,6 +33,11 @@ code {
   justify-content: center;
   /* background-color: #1F1B24; */
   background-color: #121212;
+  width: 100%;
+}
+
+.header-container < h1 {
+  width: 100%;
 }
 
 @import url('https://fonts.googleapis.com/css?family=Josefin+Sans&display=swap');
@@ -42,7 +49,7 @@ code {
 }
 
 .tabs {
-  width: 90%;
+  flex: 0 0 60%;
 
 }
 
@@ -81,4 +88,17 @@ code {
 .main-content {
   display: flex;
   justify-content: center;
+}
+
+.footer-container {
+  background-color: #121212;
+}
+
+svg {
+  background-color: #121212;
+}
+
+.category-container {
+  display: flex;
+  flex-direction: column;
 }
