@@ -83,11 +83,13 @@ code {
 }
 
 .tabs {
+  margin: 10px auto;
 }
 
 .main-content {
   display: flex;
   justify-content: center;
+  flex-wrap: wrap;
 }
 
 .footer-container {
@@ -95,10 +97,23 @@ code {
 }
 
 svg {
-  background-color: #121212;
+  /* background-color: #121212; */
 }
 
 .category-container {
+  margin: 10px auto;
+  margin-right: 5px;
+}
+
+.media-list {
+  list-style-type: none;
+  padding: 0;
+}
+
+.media-categories {
   display: flex;
-  flex-direction: column;
+  flex-wrap: wrap;
+  margin-right: auto;
+  margin-left: auto;
+  flex-direction: row;
 }

@@ -12,7 +12,7 @@ class TabContent extends Component {
     render() {
         return(
             <div className="tab-content-container">
-                <svg viewBox="0 0 200 200">
+                <svg viewBox="0 0 300 200">
                     <circle
                         cx={this.props.cx}
                         cy={this.props.cy}

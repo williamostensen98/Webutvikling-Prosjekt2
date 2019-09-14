@@ -6,9 +6,24 @@ import { render } from "react-dom";
 import TabContent from "./components/TabContent"
 import Footer from "./components/Footer"
 import MediaCategory from "./components/MediaCategory"
+import catData from "./categoryData"
 
 class App extends Component {
+    constructor(props) {
+        super(props)
+        this.state = {
+            data: catData
+        }
+    }
+
+
     render() {
+        const mediaCategories = this.state.data.map(data =>
+            <MediaCategory
+                mediaLabel={data.mediaLabel}
+                id={data.id}
+                categories={data.categories}
+            />);
         return (
             <div>
                 <Header headerText="Welcome world!"/>
@@ -25,14 +40,14 @@ class App extends Component {
                         <div label="2">
                             <TabContent
                                 cx="100"
-                                cy="100"
+                                cy="150"
                                 r="50"
                                 fill="#CF6679"
                             />
                         </div>
                         <div label="3">
                             <TabContent
-                                cx="150"
+                                cx="175"
                                 cy="50"
                                 r="50"
                                 fill="#BB86FC"
@@ -40,18 +55,16 @@ class App extends Component {
                         </div>
                         <div label="4">
                             <TabContent
-                                cx="50"
+                                cx="250"
                                 cy="150"
                                 r="50"
                                 fill="#3700B3"
                             />
                         </div>
                     </Tabs>
-                    <MediaCategory
-                        mediaLabel="Graphics"
-                        category1="Animals"
-                    />
-
+                    <div className="media-categories">
+                    {mediaCategories}
+                    </div>
                 </div>
                 <Footer />
             </div>

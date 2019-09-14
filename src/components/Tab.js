@@ -10,10 +10,23 @@ class Tab extends Component {
     onClick: PropTypes.func.isRequired,
   };
 
-  onClick = () => {
+  constructor(props) {
+    super(props);
+    this.state = {
+
+    }
+    this.onClick = this.onClick.bind(this);
+  }
+
+  onClick() {
     const { label, onClick } = this.props;
     onClick(label);
   }
+
+  // onClick = () => {
+  //   const { label, onClick } = this.props;
+  //   onClick(label);
+  // }
 
   render() {
     const {
