@@ -16,7 +16,6 @@ class App extends Component {
         }
     }
 
-
     render() {
         const mediaCategories = this.state.data.map(data =>
             <MediaCategory

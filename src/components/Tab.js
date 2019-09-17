@@ -13,7 +13,6 @@ class Tab extends Component {
   constructor(props) {
     super(props);
     this.state = {
-
     }
     this.onClick = this.onClick.bind(this);
   }

@@ -11,9 +11,12 @@ class MediaCategory extends Component {
     renderCheckbox(i) {
         return (
                 <li>
-                    <input type="checkbox" name={this.props.categories[i]}>
-                    </input>
-                    <label for="a"> {this.props.categories[i]}</label>
+                    <label className="checkbox-label">
+                        <input type="checkbox" name={this.props.categories[i]}>
+                        </input>
+                        {this.props.categories[i]}
+                        <span className="checkbox-custom"></span>
+                    </label>
                 </li>
         )
     }
@@ -32,11 +35,10 @@ class MediaCategory extends Component {
             <div className="category-container">
                 <label>
                     {this.props.mediaLabel}
-                </label>
-                <br />
                 <ul className="media-list">
                     {this.createCheckbox()}
                 </ul>
+                </label>
             </div>
         )
     }
