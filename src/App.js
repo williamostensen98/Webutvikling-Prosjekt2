@@ -8,6 +8,7 @@ import Footer from "./components/Footer"
 import MediaCategory from "./components/MediaCategory"
 import catData from "./categoryData"
 
+
 class App extends Component {
     constructor(props) {
         super(props)

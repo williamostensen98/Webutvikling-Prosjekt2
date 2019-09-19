@@ -2,6 +2,7 @@
   "name": "prosjekt_2",
   "version": "0.1.0",
   "private": true,
+  "homepage" : "http://it2810-39.idi.ntnu.no/prosjekt2",
   "dependencies": {
     "react": "^16.9.0",
     "react-dom": "^16.9.0",
