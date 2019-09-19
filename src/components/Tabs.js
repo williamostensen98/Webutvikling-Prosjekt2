@@ -13,11 +13,10 @@ class Tabs extends Component {
         this.state = {
             activeTab: this.props.children[0].props.label,
         };
-        this.onClickTabItem = this.onClickTabItem.bind(this)
     }
 
-    onClickTabItem(tab) {
-        this.setState({ activeTab: tab });
+    onClickTabItem = (tab) => {
+        return () => this.setState({ activeTab: tab });
     }
 
     // onClickTabItem as an arrow function:
@@ -48,7 +47,7 @@ class Tabs extends Component {
                     activeTab={activeTab}
                     key={label}
                     label={label}
-                    onClick={onClickTabItem}
+                    onClick={onClickTabItem(label)}
                   />
                 );
               })}

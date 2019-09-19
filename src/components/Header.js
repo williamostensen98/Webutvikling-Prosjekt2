@@ -8,7 +8,6 @@ class Header extends Component {
     }
 
     render() {
-        const text = "Hello world!";
         return (
             <div className="header-container">
                 <header className="header">

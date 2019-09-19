@@ -13,14 +13,7 @@ class Tab extends Component {
   constructor(props) {
     super(props);
     this.state = {
-
     }
-    this.onClick = this.onClick.bind(this);
-  }
-
-  onClick() {
-    const { label, onClick } = this.props;
-    onClick(label);
   }
 
   // onClick = () => {
@@ -30,10 +23,10 @@ class Tab extends Component {
 
   render() {
     const {
-      onClick,
       props: {
         activeTab,
         label,
+        onClick
       },
     } = this;
 
