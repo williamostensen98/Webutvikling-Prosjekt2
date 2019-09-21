@@ -9,7 +9,7 @@ class TabContent extends Component {
         this.state = {
             categoryData: this.props.categoryData,
             imgID: 1,
-            audioID: 1,
+            audio: "",
             textID: 1,
             image: "",
             images: [
@@ -31,8 +31,21 @@ class TabContent extends Component {
         })
     }
 
+    getSoundCombos(){
+        this.setState({
+            audio: "./media/sounds/" + this.props.selectedButton.sound +"/"+ this.props.activeTab + ".mp3"
+        })
+    }
     componentDidMount() {
         this.getImage()
+        // this.getSoundCombos()
+
+    }
+    componentDidUpdate(prevProps, prevState){
+        if(this.props.activeTab !=  prevProps.activeTab){
+            this.getSoundCombos()
+
+        }
     }
 
 
@@ -41,7 +54,7 @@ class TabContent extends Component {
         return(
             <div className="tab-content-container">
                 <div className="image" dangerouslySetInnerHTML={{__html: this.state.image}} ></div>
-                <audio src="./media/sounds/cartoons/TipToes.mp3" controls autoPlay/>
+                <audio src={this.state.audio} controls autoPlay/>
             </div>
         )
     }
