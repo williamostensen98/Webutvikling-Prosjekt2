@@ -27,20 +27,20 @@ class Tabs extends Component {
 
     render() {
         const {
-          onClickTabItem,
-          props: {
-            children,
-          },
-          state: {
-            activeTab,
-          }
+            onClickTabItem,
+            props: {
+              children,
+            },
+            state: {
+              activeTab,
+            }
         } = this;
 
         return (
           <div className="tabs">
             <ol className="tab-list">
               {children.map((child) => {
-                const { label } = child.props;
+                const label = child.props.label;
 
                 return (
                   <Tab
