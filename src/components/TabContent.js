@@ -39,6 +39,7 @@ class TabContent extends Component {
         return(
             <div className="tab-content-container">
                 <div className="image" dangerouslySetInnerHTML={{__html: this.state.image}} ></div>
+                <audio src="./media/sounds/cartoons/TipToes.mp3" controls autoPlay/>
             </div>
         )
     }

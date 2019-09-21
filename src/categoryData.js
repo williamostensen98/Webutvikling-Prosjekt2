@@ -27,18 +27,18 @@ const categoryData = [
         categories : [
             {
                 id: 1,
-                text: "Animals",
-                name: "animals"
+                text: "Cartoons",
+                name: "cartoons"
             },
             {
                 id: 2,
-                text: "Cars",
-                name: "cars"
+                text: "Jazz",
+                name: "jazz"
             },
             {
                 id: 3,
-                text: "Nature",
-                name: "nature"
+                text: "Horror",
+                name: "horror"
             }
 
         ]
