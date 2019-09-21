@@ -1,0 +1,16 @@
+i kontruktoren:
+this.state = {
+        animalLimericks: [],
+        test: ""
+
+    }
+
+getText() {
+     fetch("./media/text/animals.json")
+         .then(response => response.json())
+         .then(response => {
+            const {limericks} = response.data
+            this.setState({ animalLimericks: limericks })
+            this.setState({ test: limericks[0].text })
+        })
+ }

@@ -5,26 +5,13 @@ import React, {Component} from 'react';
 class TabContent extends Component {
     constructor(props) {
         super(props)
-        this.state = {
-            animalLimericks: [],
-            test: ""
-
-        }
+        
 
     }
 
-    getText() {
-         fetch("./media/text/animals.json")
-             .then(response => response.json())
-             .then(response => {
-                const {limericks} = response.data
-                this.setState({ animalLimericks: limericks })
-                this.setState({ test: limericks[0].text })
-            })
-     }  
 
     componentDidMount() {
-        this.getText()
+
     }
 
 
@@ -41,7 +28,7 @@ class TabContent extends Component {
                         fill={this.props.fill}
                     />
                 </svg>*/}
-                <p>{this.state.test}</p>
+
             </div>
         )
     }
