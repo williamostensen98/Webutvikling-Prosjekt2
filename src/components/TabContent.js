@@ -32,21 +32,21 @@ class TabContent extends Component {
         this.setState({
             audio: "./media/sounds/" + this.props.selectedButton.sound +"/"+ this.props.activeTab + ".mp3"
         })
+        console.log(this.props.selectedButton.sound)
     }
     componentDidMount() {
         this.getImage()
+        this.getSoundCombos()
         // this.getSoundCombos()
 
     }
     componentDidUpdate(prevProps, prevState){
-        if(this.props.activeTab !=  prevProps.activeTab){
+        if(this.props.activeTab !=  prevProps.activeTab || this.props.selectedButton !== prevProps.selectedButton){
             this.getSoundCombos()
+            this.getImage()
 
         }
-    }
 
-    componentDidUpdate() {
-        this.getImage()
     }
 
     render() {
