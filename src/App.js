@@ -13,7 +13,24 @@ class App extends Component {
     constructor(props) {
         super(props)
         this.state = {
-            data: catData
+            data: catData,
+            selectedButton: {
+                image: "Animals",
+                sound: "f",
+                text: ""
+            },
+            imageCategories: ["Animals", "Nature", "Vehicles"]
+        }
+        this.handleRadioChange = this.handleRadioChange.bind(this)
+    }
+
+    handleRadioChange(button) {
+        if (button == "Animals" || button == "Nature" || button == "Vehicles") {
+            this.setState({
+                selectedButton: {
+                    image: button
+                }
+            })
         }
     }
 
@@ -23,12 +40,16 @@ class App extends Component {
                 mediaLabel={data.mediaLabel}
                 id={data.id}
                 categories={data.categories}
+                handleRadioChange={this.handleRadioChange}
             />);
         return (
             <div>
                 <Header headerText="Welcome world!"/>
                 <div className="main-content">
-                    <Tabs mediaCategories={this.state.data}>
+                    <Tabs
+                        mediaCategories={this.state.data}
+                        selectedButton={this.state.selectedButton}
+                    >
                         <div label="1">
                         </div>
                         <div label="2">

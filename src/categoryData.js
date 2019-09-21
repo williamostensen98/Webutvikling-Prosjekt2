@@ -1,7 +1,7 @@
 const categoryData = [
     {
         id: 1,
-        mediaLabel: "Graphics",
+        mediaLabel: "Images",
         categories :[
             {
                 id: 1,
@@ -11,8 +11,8 @@ const categoryData = [
             },
             {
                 id: 2,
-                text: "Cars",
-                name: "cars"
+                text: "Vehicles",
+                name: "vehicles"
             },
             {
                 id: 3,

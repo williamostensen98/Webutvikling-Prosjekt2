@@ -62,6 +62,7 @@ class Tabs extends Component {
                 <TabContent
                     activeTab={this.state.activeTab}
                     categoryData={this.props.categoryData}
+                    selectedButton={this.props.selectedButton}
                 />
               </div>
           </div>
