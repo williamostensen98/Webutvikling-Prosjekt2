@@ -54,13 +54,13 @@ const categoryData = [
             },
             {
                 id: 2,
-                text: "Cars",
-                name: "cars"
+                text: "Horror",
+                name: "horror"
             },
             {
                 id: 3,
-                text: "Nature",
-                name: "nature"
+                text: "Jokes",
+                name: "jokes"
             }
 
         ]
