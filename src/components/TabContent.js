@@ -35,6 +35,8 @@ class TabContent extends Component {
         this.getImage()
     }
 
+
+
     render() {
         return(
             <div className="tab-content-container">

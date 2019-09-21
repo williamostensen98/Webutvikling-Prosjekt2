@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
 import Tab from "./Tab";
+import TabContent from "./TabContent"
 import PropTypes from 'prop-types'; // Read more about PropTypes library here: https://reactjs.org/docs/typechecking-with-proptypes.html
 // Src for inspiration for tabs: https://alligator.io/react/tabs-component/
 
@@ -35,7 +36,6 @@ class Tabs extends Component {
               activeTab,
             }
         } = this;
-
         return (
           <div className="tabs">
             <ol className="tab-list">
@@ -58,6 +58,12 @@ class Tabs extends Component {
                 return child.props.children;
               })}
             </div>
+            <div label="1">
+                <TabContent
+                    activeTab={this.state.activeTab}
+                    categoryData={this.props.categoryData}
+                />
+              </div>
           </div>
         );
     }

@@ -10,14 +10,11 @@ class MediaCategory extends Component {
     // renderCheckbox kan utvides til å ta input for å lage en liste kategorier med props
     renderCheckbox(i) {
         return (
-                <li>
-                    <label className="checkbox-label">
-                        <input type="checkbox" name={this.props.categories[i].name}>
-                        </input>
-                        {this.props.categories[i].text}
-                        <span className="checkbox-custom"></span>
-                    </label>
-                </li>
+                <label className="radio-label">
+                    <input type="radio" name="images"></input>
+                    {this.props.categories[i].text}
+                    <br/>
+                </label>
         )
     }
 
@@ -30,7 +27,7 @@ class MediaCategory extends Component {
     }
 
     render() {
-        // console.log(this.state.categories[0])
+
         return(
             <div className="category-container">
                 <label>
