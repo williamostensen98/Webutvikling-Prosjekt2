@@ -1,0 +1,9 @@
+{
+    "number": 2,
+    "author": "Anonymous",
+    "text": "A dinosaur stomped into a mall \n
+            where people are tiny and small \n
+            Now why did you think \n
+            I was really extinct \n
+            the dinosaur roared with a drawl."
+}

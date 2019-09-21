@@ -1,0 +1,8 @@
+{
+    "number": 1,
+    "author": "Anonymous",
+    "text": "A mouse in her room woke Miss Doud \n
+            Who was frightened and screamed very loud \n
+            Then a happy thought hit her \n
+            To scare off the critter"
+}

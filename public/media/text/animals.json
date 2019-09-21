@@ -1,0 +1,51 @@
+{
+  success: true,
+
+  data: {
+    limericks: [
+      {
+          id: 1,
+          author: "Anonymous",
+          text: "A mouse in her room woke Miss Doud \n
+                  Who was frightened and screamed very loud \n
+                  Then a happy thought hit her \n
+                  To scare off the critter"
+      },
+
+      {
+          id: 2,
+          author: "Anonymous",
+          text: "A dinosaur stomped into a mall \n
+                  where people are tiny and small \n
+                  Now why did you think \n
+                  I was really extinct \n
+                  the dinosaur roared with a drawl."
+      },
+
+      {
+          id: 3,
+          author: "Anonymous",
+          text: "There was a fat cat on a mat \n
+                  Who liked to chase mice named Pat. \n
+                  He chased them around \n
+                  And fell on the ground \n
+                  And smashed them until they were flat!"
+      },
+
+      {
+          id: 4,
+          author: "Anonymous",
+          text: "There once was a snake named Lena \n
+                  Who swallowed a concertina \n
+                  And when she was squeezed \n
+                  Way up in the trees \n
+                  She played the macarena."
+      }
+
+
+
+
+    ]
+  }
+
+}
