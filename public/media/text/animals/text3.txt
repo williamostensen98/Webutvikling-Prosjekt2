@@ -1,9 +1,0 @@
-{
-    "number": 3,
-    "author": "Anonymous",
-    "text": "There was a fat cat on a mat \n
-            Who liked to chase mice named Pat. \n
-            He chased them around \n
-            And fell on the ground \n
-            And smashed them until they were flat!"
-}

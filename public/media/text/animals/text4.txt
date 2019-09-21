@@ -1,9 +1,0 @@
-{
-    "number": 4,
-    "author": "Anonymous",
-    "text": "There once was a snake named Lena \n
-            Who swallowed a concertina \n
-            And when she was squeezed \n
-            Way up in the trees \n
-            She played the macerena." \n
-}
