@@ -21,7 +21,7 @@ class TabContent extends Component {
                 this.setState({ animalLimericks: limericks })
                 this.setState({ test: limericks[0].text })
             })
-     }
+     }  
 
     componentDidMount() {
         this.getText()
