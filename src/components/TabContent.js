@@ -12,9 +12,6 @@ class TabContent extends Component {
             audioID: 1,
             textID: 1,
             image: "",
-            images: [
-                null, null, null, null
-            ],
             texts: [
                 null, null, null, null
             ]
@@ -22,7 +19,7 @@ class TabContent extends Component {
     }
     // Fetching images using AJAX and fetch() function
     getImage() {
-        fetch("./media/svg/Animals/Caribou.svg")
+        fetch("./media/svg/" + this.props.selectedButton.image + "/" + this.props.activeTab + ".svg")
         .then(response => response.text())
         .then(response => {
             this.setState({
@@ -35,7 +32,9 @@ class TabContent extends Component {
         this.getImage()
     }
 
-
+    componentDidUpdate() {
+        this.getImage()
+    }
 
     render() {
         return(
