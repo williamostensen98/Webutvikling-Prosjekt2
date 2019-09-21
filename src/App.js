@@ -2,7 +2,7 @@ import React, {Component} from 'react';
 import Header from './components/Header';
 import Tabs from './components/Tabs'
 import './css/main.css';
-import { render } from "react-dom";
+// import { render } from "react-dom";
 import TabContent from "./components/TabContent"
 import Footer from "./components/Footer"
 import MediaCategory from "./components/MediaCategory"
