@@ -121,157 +121,96 @@ svg {
 /* Styling for checkboxes: */
 /* Source: https://appitventures.com/blog/styling-checkbox-css-tips/ */
 @import url('https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700,900');
-body {
-    font-family: 'Roboto', sans-serif;
-  }
 
+/* CSS Radio button styling */
+@import url('https://fonts.googleapis.com/css?family=Open+Sans:600');
 
-/* Styling Checkbox Starts */
-.checkbox-label {
-    /* display: block; */
-    position: relative;
-    margin: auto;
-    cursor: pointer;
-    font-size: 16px;
-    line-height: 24px;
-    height: 24px;
-    width: 24px;
-    clear: both;
+.containerOuter {
+  background: white;
+  border-radius: 8px;
+  box-shadow: 2px 6px 20px 2px rgba(10,10,120,0.15);
 }
-
-.checkbox-label input {
-    /* position: absolute; */
-    opacity: 0;
-    cursor: pointer;
+.container {
+  position: relative;
+  margin: 20px;
+  overflow: hidden;
+  width: 160px;
 }
-
-.checkbox-label .checkbox-custom {
-    position: absolute;
-    top: 0px;
-    left: -10px;
-    height: 15px;
-    width: 15px;
-    background-color: transparent;
-    border-radius: 5px;
-    transition: all 0.3s ease-out;
-    -webkit-transition: all 0.3s ease-out;
-    -moz-transition: all 0.3s ease-out;
-    -ms-transition: all 0.3s ease-out;
-    -o-transition: all 0.3s ease-out;
-    border: 2px solid #FFFFFF;
+.hidden {
+  display: none;
 }
-
-
-.checkbox-label input:checked ~ .checkbox-custom {
-    background-color: #FFFFFF;
-    border-radius: 5px;
-    -webkit-transform: rotate(0deg) scale(1);
-    -ms-transform: rotate(0deg) scale(1);
-    transform: rotate(0deg) scale(1);
-    opacity:1;
-    border: 2px solid #FFFFFF;
+.entry {
+  height: 25px;
+  position: absolute;
+  width: 160px;
 }
-
-
-.checkbox-label .checkbox-custom::after {
-    position: absolute;
-    content: "";
-    left: 12px;
-    top: 12px;
-    height: 0px;
-    width: 0px;
-    border-radius: 5px;
-    border: solid #009BFF;
-    border-width: 0 3px 3px 0;
-    -webkit-transform: rotate(0deg) scale(0);
-    -ms-transform: rotate(0deg) scale(0);
-    transform: rotate(0deg) scale(0);
-    opacity:1;
-    transition: all 0.3s ease-out;
-    -webkit-transition: all 0.3s ease-out;
-    -moz-transition: all 0.3s ease-out;
-    -ms-transition: all 0.3s ease-out;
-    -o-transition: all 0.3s ease-out;
+.entry:nth-child(2) {
+  left: 8px;
+  top: 8px;
 }
-
-
-.checkbox-label input:checked ~ .checkbox-custom::after {
-  -webkit-transform: rotate(45deg) scale(1);
-  -ms-transform: rotate(45deg) scale(1);
-  transform: rotate(45deg) scale(1);
-  opacity:1;
-  left: 4px;
-  top: 0px;
-  width: 6px;
+.entry:nth-child(4) {
+  left: 8px;
+  top: 58px;
+}
+.entry:nth-child(6) {
+  left: 8px;
+  top: 108px;
+}
+.circle {
+  border: 2px solid #545556;
+  border-radius: 50%;
+  cursor: pointer;
+  height: 20px;
+  position: absolute;
+  transition: border-color 300ms;
+  width: 20px;
+}
+.entry-label {
+  cursor: pointer;
+  margin-top: -3px;
+  padding-left: 40px;
+  user-select: none;
+  -moz-user-select: none;
+}
+.overlay {
+  background: #fff;
+  mask: url(#holes);
+  -webkit-mask-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACgAAACMCAYAAAAOc+uVAAAABHNCSVQICAgIfAhkiAAAAAlwSFlzAAAOxAAADsQBlSsOGwAAABl0RVh0U29mdHdhcmUAd3d3Lmlua3NjYXBlLm9yZ5vuPBoAAAItSURBVHic7ZnNjhJBFIVPA0txr0Iyw+tIdOXWaDRufZWZeYbZuMKOUV9Gg+HHGN/BHBcNcSBT1KVOEVycb0mq635UVd9U5zQkif+Y3rkFclhQxYIqFlQZiM8vALQAPgP4AWC1+X0E4ALAFMBzAOPiCixjRfIdyX5g/h7JFyTnJYVKBGckHxQsxJBke2rBK5LF55bdal6fSnCmyO1JhlcyKrhkwbYekBySXNcUfF1L7o7k20jhhsxetxYAJk3T/Kks2EfXmkaHxkXO1MfacgCwmbPNjYsIftV1knzJDYgIfqsgkuJ7bkBE8FcFkRTr3IBzXxay9SOCjyuIFM8dEZxUECmeOyL4tIJIimluQKRRLwFcnqBRDwDMUaFRjwG8quC0zxtk5ACEL6wrksNaZiQfkvwZKRxtM08AfGDgBh2Q6wG4BfAo+sAxXB/xp+6VI3lzTMGSK3/Lgu1mt62fji1W+tH0m+R7dm9iZNVeMnjm9om0mUOs8O+zc47dz84Juh76DJG3NYEqeHLOfVnIYkEVC6pYUMWCKhZUsaCKBVUsqGJBFQuqWFDFgipO3OnEfRcn7qWCTtxTOHFP4cS9Ek7cVZy4qzhxL4ZO3AXoxF2QoxP3DifuW5y4q1hQxYIqFlSxoIoFVSyoYkEVC6pYUMWCKhZUsaCKE3c6cd/FiXupoBP3FE7cUzhxr4QTdxUn7ipO3IuhE3cBOnEX5OjEvcOJ+xYn7ioWVLGgigVV/gKEL4RSyM8Z8wAAAABJRU5ErkJggg==);
+  height: 140px;
+  pointer-events: none;
+  transition: background 300ms;
+  width: 40px;
+}
+.highlight {
+  background: #4D98EF;
+  border-radius: 50%;
   height: 12px;
-  border: solid #009BFF;
-  border-width: 0 2px 2px 0;
-  background-color: transparent;
-  border-radius: 0;
+  left: 14px;
+  pointer-events: none;
+  position: absolute;
+  top: 14px;
+  transition: transform 400ms cubic-bezier(0.175, 0.885, 0.32, 1.2);
+  transform: translateY(-50px);
+  width: 12px;
 }
-
-
-
-/* For Ripple Effect */
-.checkbox-label .checkbox-custom::before {
-    position: absolute;
-    content: "";
-    left: 10px;
-    top: 10px;
-    width: 0px;
-    height: 0px;
-    border-radius: 5px;
-    border: 2px solid #FFFFFF;
-    -webkit-transform: scale(0);
-    -ms-transform: scale(0);
-    transform: scale(0);
+.hidden:nth-child(1):checked ~ .highlight {
+  transform: translateY(0);
 }
-
-.checkbox-label input:checked ~ .checkbox-custom::before {
-    left: -3px;
-    top: -3px;
-    width: 24px;
-    height: 24px;
-    border-radius: 5px;
-    -webkit-transform: scale(3);
-    -ms-transform: scale(3);
-    transform: scale(3);
-    opacity:0;
-    z-index: 999;
-    transition: all 0.3s ease-out;
-    -webkit-transition: all 0.3s ease-out;
-    -moz-transition: all 0.3s ease-out;
-    -ms-transition: all 0.3s ease-out;
-    -o-transition: all 0.3s ease-out;
+.hidden:nth-child(3):checked ~ .highlight {
+  transform: translateY(50px);
 }
-
-
-
-
-/* Style for Circular Checkbox */
-.checkbox-label .checkbox-custom.circular {
-    border-radius: 50%;
-    border: 2px solid #FFFFFF;
+.hidden:nth-child(5):checked ~ .highlight {
+  transform: translateY(100px);
 }
-
-.checkbox-label input:checked ~ .checkbox-custom.circular {
-    background-color: #FFFFFF;
-    border-radius: 50%;
-    border: 2px solid #FFFFFF;
+.hidden:nth-child(1):checked + .entry .circle {
+  border-color: #4D98EF;
 }
-.checkbox-label input:checked ~ .checkbox-custom.circular::after {
-    border: solid #0067FF;
-    border-width: 0 2px 2px 0;
+.hidden:nth-child(3):checked + .entry .circle {
+  border-color: #4D98EF;
 }
-.checkbox-label .checkbox-custom.circular::after {
-    border-radius: 50%;
+.hidden:nth-child(5):checked + .entry .circle {
+  border-color: #4D98EF;
 }
-
-.checkbox-label .checkbox-custom.circular::before {
-    border-radius: 50%;
-    border: 2px solid #FFFFFF;
-}
-
-.checkbox-label input:checked ~ .checkbox-custom.circular::before {
-    border-radius: 50%;
+.check:checked ~ .containerOuter .overlay {
+  background: #ecf0f4;
 }

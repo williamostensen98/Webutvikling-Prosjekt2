@@ -28,30 +28,14 @@ class App extends Component {
             <div>
                 <Header headerText="Welcome world!"/>
                 <div className="main-content">
-                    <Tabs>
+                    <Tabs mediaCategories={this.state.data}>
                         <div label="1">
-                            <TabContent
-                                id="1"
-                                categoryData={this.state.data}
-                            />
                         </div>
                         <div label="2">
-                            <TabContent
-                                id="2"
-                                categoryData={this.state.data}
-                            />
                         </div>
                         <div label="3">
-                            <TabContent
-                                id="3"
-                                categoryData={this.state.data}
-                            />
                         </div>
                         <div label="4">
-                            <TabContent
-                                id="4"
-                                categoryData={this.state.data}
-                            />
                         </div>
                     </Tabs>
                     <div className="media-categories">
