@@ -31,34 +31,26 @@ class App extends Component {
                     <Tabs>
                         <div label="1">
                             <TabContent
-                                cx="50"
-                                cy="50"
-                                r="50"
-                                fill="#03DAC6"
+                                id="1"
+                                categoryData={this.state.data}
                             />
                         </div>
                         <div label="2">
                             <TabContent
-                                cx="100"
-                                cy="150"
-                                r="50"
-                                fill="#CF6679"
+                                id="2"
+                                categoryData={this.state.data}
                             />
                         </div>
                         <div label="3">
                             <TabContent
-                                cx="175"
-                                cy="50"
-                                r="50"
-                                fill="#BB86FC"
+                                id="3"
+                                categoryData={this.state.data}
                             />
                         </div>
                         <div label="4">
                             <TabContent
-                                cx="250"
-                                cy="150"
-                                r="50"
-                                fill="#3700B3"
+                                id="4"
+                                categoryData={this.state.data}
                             />
                         </div>
                     </Tabs>

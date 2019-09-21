@@ -12,9 +12,9 @@ class MediaCategory extends Component {
         return (
                 <li>
                     <label className="checkbox-label">
-                        <input type="checkbox" name={this.props.categories[i]}>
+                        <input type="checkbox" name={this.props.categories[i].name}>
                         </input>
-                        {this.props.categories[i]}
+                        {this.props.categories[i].text}
                         <span className="checkbox-custom"></span>
                     </label>
                 </li>
