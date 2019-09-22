@@ -64,7 +64,7 @@ class App extends Component {
             />);
         return (
             <div>
-                <Header headerText="Welcome world!"/>
+                <Header/>
                 <div className="main-content">
                     <Tabs
                         mediaCategories={this.state.data}

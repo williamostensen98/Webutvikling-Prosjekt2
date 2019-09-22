@@ -80,10 +80,19 @@ class TabContent extends Component {
     render() {
         return(
             <div className="tab-content-container">
-                <div className="image" dangerouslySetInnerHTML={{__html: this.state.image}} ></div>
-                <audio src={this.state.audio} controls autoPlay/>
-                <p>{this.renderText()}</p>
-                <h1>{this.renderAuthor()}</h1>
+                <div className="image">
+                    <div id="svg_img" dangerouslySetInnerHTML={{__html: this.state.image}} ></div>
+                </div>
+                <div className="nested">
+                    <div className="text-wrap">
+                        &quot;{this.renderText()}&quot;
+                        <p> - {this.renderAuthor()}</p>
+                    </div>
+
+                    <div className="audio-wrap">
+                        <audio src={this.state.audio} controls autoPlay/>
+                    </div>
+                </div>
             </div>
         )
     }
