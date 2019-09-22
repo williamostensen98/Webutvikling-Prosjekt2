@@ -55,13 +55,13 @@ class TabContent extends Component {
         if(this.props.activeTab !==  prevProps.activeTab || this.props.selectedButton !== prevProps.selectedButton){
             this.getSoundCombos()
             this.getImage()
-            this.getText() 
+            this.getText()
 
         }
     }
 
     renderAuthor() {
-        return this.state.allText[this.props.activeTab].author
+        return this.state.allText[this.props.activeTab-1].author
 
     }
 
@@ -83,7 +83,7 @@ class TabContent extends Component {
                 <div className="image" dangerouslySetInnerHTML={{__html: this.state.image}} ></div>
                 <audio src={this.state.audio} controls autoPlay/>
                 <p>{this.renderText()}</p>
-
+                <h1>{this.renderAuthor()}</h1>
             </div>
         )
     }
