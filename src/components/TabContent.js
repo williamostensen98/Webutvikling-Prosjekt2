@@ -84,6 +84,11 @@ class TabContent extends Component {
                 <audio src={this.state.audio} controls autoPlay/>
                 <p>{this.renderText()}</p>
                 <h1>{this.renderAuthor()}</h1>
+                <div class="click">
+                	<span class="fa fa-star-o"></span>
+                	<div class="ring"></div>
+                	<div class="ring2"></div>
+                </div>
             </div>
         )
     }

@@ -35,7 +35,7 @@ code {
   background-color: #121212;
   width: 100%;
 }
- 
+
 .header-container < h1 {
   width: 100%;
 }
@@ -118,4 +118,4 @@ svg {
   align-items: flex-start;
 
 }
-/* Styling for radio buttons: */
+/* Styling for favorite button: */

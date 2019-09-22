@@ -19,10 +19,12 @@ class App extends Component {
                 sound: "Cartoons",
                 text: "Animals"
             },
-            imageCategories: ["Animals", "Nature", "Vehicles"]
+            hasFavorite: localStorage.getItem('hasFavorite') || false
         }
         this.handleRadioChange = this.handleRadioChange.bind(this)
     }
+
+
 
     handleRadioChange(button, i) {
         if (button.mediaLabel === "Images") {
@@ -54,6 +56,33 @@ class App extends Component {
         }
     }
 
+    handleClick = () => {
+        localStorage.setItem('favoriteImage', this.state.selectedButton.image)
+        localStorage.setItem('favoriteSound', this.state.selectedButton.sound)
+        localStorage.setItem('favoriteText', this.state.selectedButton.imagtext)
+        localStorage.setItem('hasFavorite', true)
+        this.setState({
+            hasFavorite: true
+        })
+    }
+
+    applyFavorite = () => {
+        this.setState({
+            selectedButton: {
+                image: localStorage.getItem('favoriteImage'),
+                text: localStorage.getItem('favoriteText'),
+                sound: localStorage.getItem('favoriteSound')
+            }
+        })
+    }
+
+    handleRemove = () => {
+        this.setState({
+            hasFavorite: false
+        })
+        localStorage.clear()
+    }
+
     render() {
         const mediaCategories = this.state.data.map(data =>
             <MediaCategory
@@ -69,6 +98,7 @@ class App extends Component {
                     <Tabs
                         mediaCategories={this.state.data}
                         selectedButton={this.state.selectedButton}
+                        hasFavorite={this.state.hasFavorite}
                     >
                         <div label="1">
                         </div>
@@ -81,6 +111,11 @@ class App extends Component {
                     </Tabs>
                     <div className="media-categories">
                     {mediaCategories}
+                    {this.state.hasFavorite ? <button onClick={this.handleRemove}>Remove favorite</button> : <button onClick={this.handleClick}>Add to favorite</button>}
+                    {this.state.hasFavorite ? <button onClick={this.applyFavorite}>Apply favorite</button> : null   }
+
+
+
                     </div>
                 </div>
                 <Footer />
