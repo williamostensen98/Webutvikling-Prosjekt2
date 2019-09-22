@@ -10,12 +10,12 @@ class MediaCategory extends Component {
     // renderCheckbox kan utvides til å ta input for å lage en liste kategorier med props
     renderCheckbox(i) {
         return (
-            <label className="radio-label">
+            <label className="radio-label" for={this.props.id}>
                 <input
-                    key={this.props.id}
+                    id={this.props.id}
                     type="radio"
                     name={this.props.mediaLabel}
-                    onClick={() => this.props.handleRadioChange(this.props.categories[i].text)}>
+                    onClick={() => this.props.handleRadioChange(this.props, i)}>
                 </input>
                 {this.props.categories[i].text}
                 <br/>

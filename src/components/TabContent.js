@@ -12,9 +12,9 @@ class TabContent extends Component {
             audio: "",
             textID: 1,
             image: "",
-            allText: {author: "",
-                    text: ""
-            }
+            allText: [{author: "",
+                        text: ""
+                    }]
         }
     }
     // Fetching images using AJAX and fetch() function
@@ -40,24 +40,22 @@ class TabContent extends Component {
              .then(response => response.json())
              .then(response => {
                 this.setState({ allText: response.data.limericks })
-                // console.log(this.state.allText[0].text) //HVORFOR FUNKER DETTE
-
             })
      }
 
 
     componentDidMount() {
         this.getImage()
+        this.getSoundCombos()
         this.getText()
-        // console.log(this.state.allText) //HVORFOR FUNKER DETTE IKKE
         // this.getSoundCombos()
 
     }
     componentDidUpdate(prevProps, prevState){
-        if(this.props.activeTab !=  prevProps.activeTab){
+        if(this.props.activeTab !==  prevProps.activeTab || this.props.selectedButton !== prevProps.selectedButton){
             this.getSoundCombos()
             this.getImage()
-            this.getText()
+            this.getText() 
 
         }
     }
@@ -70,24 +68,22 @@ class TabContent extends Component {
 
     // JENNY
     renderText() {
-        // console.log(this.state.allText[0].text)
         var relevantText = this.state.allText[this.props.activeTab-1].text
-        var newText = relevantText.split("\r")
-        // console.log(this.state.allText[0][text])
+        var newText = relevantText.split("\n")
         let moreText = []
-        for (var i = 0; i < newText.length() ; i++) {
-            moreText.append(<p>{newText[i]}</p>)
+        for (var i = 0; i < newText.length ; i++) {
+            moreText.push(<p>{newText[i]}</p>)
         }
         return moreText
     }
 
     render() {
-        {this.getText()}
         return(
             <div className="tab-content-container">
                 <div className="image" dangerouslySetInnerHTML={{__html: this.state.image}} ></div>
                 <audio src={this.state.audio} controls autoPlay/>
-                <p>{this.state.allText[0]}</p>
+                <p>{this.renderText()}</p>
+
             </div>
         )
     }

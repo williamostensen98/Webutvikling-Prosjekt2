@@ -16,7 +16,7 @@ class App extends Component {
             data: catData,
             selectedButton: {
                 image: "Animals",
-                sound: "f",
+                sound: "Cartoons",
                 text: ""
             },
             imageCategories: ["Animals", "Nature", "Vehicles"]
@@ -24,13 +24,33 @@ class App extends Component {
         this.handleRadioChange = this.handleRadioChange.bind(this)
     }
 
-    handleRadioChange(button) {
-        if (button == "Animals" || button == "Nature" || button == "Vehicles") {
-            this.setState({
+    handleRadioChange(button, i) {
+        if (button.mediaLabel === "Images") {
+            this.setState( prevState => ({
                 selectedButton: {
-                    image: button
+                    sound: prevState.selectedButton.sound,
+                    image: button.categories[i].text,
+                    text: prevState.selectedButton.text
                 }
-            })
+            }))
+        }
+        if (button.mediaLabel === "Sounds") {
+            this.setState(prevState => ({
+                selectedButton: {
+                    sound: button.categories[i].text,
+                    image: prevState.selectedButton.image,
+                    text: prevState.selectedButton.text
+                }
+            }))
+        }
+        if (button.mediaLabel === "Texts") {
+            this.setState(prevState => ({
+                selectedButton: {
+                    text: button.categories[i].text,
+                    image: prevState.selectedButton.image,
+                    sound: prevState.selectedButton.sound
+                }
+            }))
         }
     }
 
