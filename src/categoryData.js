@@ -7,17 +7,20 @@ const categoryData = [
                 id: 1,
                 text: "Animals",
                 name: "animals",
+                checked: true,
 
             },
             {
                 id: 2,
                 text: "Vehicles",
-                name: "vehicles"
+                name: "vehicles",
+                checked: false,
             },
             {
                 id: 3,
                 text: "Nature",
-                name: "nature"
+                name: "nature",
+                checked: false,
             }
         ]
     },
@@ -28,17 +31,20 @@ const categoryData = [
             {
                 id: 1,
                 text: "Cartoons",
-                name: "cartoons"
+                name: "cartoons",
+                checked: true
             },
             {
                 id: 2,
                 text: "Jazz",
-                name: "jazz"
+                name: "jazz",
+                checked: false
             },
             {
                 id: 3,
                 text: "Horror",
-                name: "horror"
+                name: "horror",
+                checked: false
             }
 
         ]
@@ -50,17 +56,20 @@ const categoryData = [
             {
                 id: 1,
                 text: "Animals",
-                name: "animals"
+                name: "animals",
+                checked: true
             },
             {
                 id: 2,
                 text: "Horror",
-                name: "horror"
+                name: "horror",
+                checked: false
             },
             {
                 id: 3,
                 text: "Jokes",
-                name: "jokes"
+                name: "jokes",
+                checked: false
             }
 
         ]

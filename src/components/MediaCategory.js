@@ -4,7 +4,7 @@ class MediaCategory extends Component {
     constructor(props) {
         super(props)
         this.state = {
-            categories: props.categories
+            categories: props.categories,
         }
     }
     // renderCheckbox kan utvides til å ta input for å lage en liste kategorier med props
@@ -14,6 +14,7 @@ class MediaCategory extends Component {
                 <input
                     id={this.props.id}
                     type="radio"
+                    defaultChecked={this.props.categories[i].checked}
                     name={this.props.mediaLabel}
                     onClick={() => this.props.handleRadioChange(this.props, i)}>
                 </input>
@@ -22,6 +23,7 @@ class MediaCategory extends Component {
             </label>
         )
     }
+
 
     createCheckbox = () => {
         let checkboxes = []
