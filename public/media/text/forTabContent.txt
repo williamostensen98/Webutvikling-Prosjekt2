@@ -14,3 +14,13 @@ getText() {
             this.setState({ test: limericks[0].text })
         })
  }
+
+
+ renderText() {
+     var moreText = []
+     var newText = this.state.animalLimericks[0].text.split("\r")
+     for (var i = 0; i<newText.length; i++) {
+         moreText.push(<p>{newText[i]}</p>)
+     }
+     return moreText
+ }
