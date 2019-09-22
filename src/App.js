@@ -29,7 +29,8 @@ class App extends Component {
             this.setState( prevState => ({
                 selectedButton: {
                     sound: prevState.selectedButton.sound,
-                    image: button.categories[i].text
+                    image: button.categories[i].text,
+                    text: prevState.selectedButton.text
                 }
             }))
         }
@@ -37,7 +38,17 @@ class App extends Component {
             this.setState(prevState => ({
                 selectedButton: {
                     sound: button.categories[i].text,
-                    image: prevState.selectedButton.image
+                    image: prevState.selectedButton.image,
+                    text: prevState.selectedButton.text
+                }
+            }))
+        }
+        if (button.mediaLabel === "Texts") {
+            this.setState(prevState => ({
+                selectedButton: {
+                    text: button.categories[i].text,
+                    image: prevState.selectedButton.image,
+                    sound: prevState.selectedButton.sound
                 }
             }))
         }
