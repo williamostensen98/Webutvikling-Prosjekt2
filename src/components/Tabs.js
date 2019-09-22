@@ -60,9 +60,9 @@ class Tabs extends Component {
             </div>
             <div label="1">
                 <TabContent
-                    activeTab={this.state.activeTab}
-                    categoryData={this.props.categoryData}
-                    selectedButton={this.props.selectedButton}
+                    activeTab={this.state.activeTab} //tall
+                    categoryData={this.props.categoryData} //henter fra
+                    selectedButton={this.props.selectedButton} //button labelet
                 />
               </div>
           </div>
