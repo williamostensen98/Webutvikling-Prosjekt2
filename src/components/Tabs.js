@@ -21,9 +21,6 @@ class Tabs extends Component {
     }
 
     // onClickTabItem as an arrow function:
-    // onClickTabItem = (tab) => {
-    //     this.setState({ activeTab: tab });
-    // }
     // The advantage of writing the method as an arrow function is that you dont have to bind the function in the constructor
 
     render() {
@@ -36,6 +33,8 @@ class Tabs extends Component {
               activeTab,
             }
         } = this;
+
+
         return (
           <div className="tabs">
             <ol className="tab-list">

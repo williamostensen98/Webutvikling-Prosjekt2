@@ -22,13 +22,9 @@ class Tab extends Component {
   // }
 
   render() {
-    const {
-      props: {
-        activeTab,
-        label,
-        onClick
-      },
-    } = this;
+    const activeTab = this.props.activeTab;
+    const label = this.props.label;
+    const onClick = this.props.onClick;
 
     let className = 'tab-list-item';
 

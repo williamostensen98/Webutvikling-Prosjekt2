@@ -19,14 +19,11 @@ class App extends Component {
                 sound: "Cartoons",
                 text: "Animals"
             },
-            hasFavorite: localStorage.getItem('hasFavorite') || false
+            hasFavorite: localStorage.getItem('hasFavorite')
         }
-        this.handleRadioChange = this.handleRadioChange.bind(this)
     }
 
-
-
-    handleRadioChange(button, i) {
+    handleRadioChange = (button, i) => {
         if (button.mediaLabel === "Images") {
             this.setState( prevState => ({
                 selectedButton: {
@@ -111,8 +108,14 @@ class App extends Component {
                     </Tabs>
                     <div className="media-categories">
                     {mediaCategories}
-                    {this.state.hasFavorite ? <button onClick={this.handleRemove}>Remove favorite</button> : <button onClick={this.handleClick}>Add to favorite</button>}
-                    {this.state.hasFavorite ? <button onClick={this.applyFavorite}>Apply favorite</button> : null   }
+                    {this.state.hasFavorite
+                        ? <button onClick={this.handleRemove}>Remove favorite</button>
+                        : <button onClick={this.handleClick}>Add to favorite</button>
+                    }
+                    {this.state.hasFavorite
+                        ? <button onClick={this.applyFavorite}>Apply favorite</button>
+                        : null
+                    }
 
 
 
@@ -124,8 +127,5 @@ class App extends Component {
     }
 
 }
-// const container = document.createElement('div');
-// document.body.appendChild(container);
-// render(<App />, container);
 
 export default App;
