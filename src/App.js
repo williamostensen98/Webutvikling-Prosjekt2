@@ -19,8 +19,16 @@ class App extends Component {
                 sound: "Cartoons",
                 text: "Animals"
             },
-            hasFavorite: localStorage.getItem('hasFavorite')
+            hasFavorite: localStorage.getItem('hasFavorite'),
+            clicks: Number(sessionStorage.getItem('clicks'))
         }
+    }
+
+    incrementClick = (prevState) => {
+        sessionStorage.setItem('clicks', this.state.clicks + 1)
+        this.setState({
+            clicks: this.state.clicks + 1
+        })
     }
 
     handleRadioChange = (button, i) => {
@@ -89,7 +97,7 @@ class App extends Component {
                 handleRadioChange={this.handleRadioChange}
             />);
         return (
-            <div>
+            <div onClick={this.incrementClick}>
                 <Header headerText="Welcome world!"/>
                 <div className="main-content">
                     <Tabs
@@ -116,6 +124,7 @@ class App extends Component {
                         ? <button onClick={this.applyFavorite}>Apply favorite</button>
                         : null
                     }
+                    <p>Your clicks: {this.state.clicks}</p>
 
 
 
