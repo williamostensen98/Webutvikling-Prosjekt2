@@ -17,7 +17,7 @@ class App extends Component {
             selectedButton: {
                 image: "Animals",
                 sound: "Cartoons",
-                text: ""
+                text: "Animals"
             },
             imageCategories: ["Animals", "Nature", "Vehicles"]
         }

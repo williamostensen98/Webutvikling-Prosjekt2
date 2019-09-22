@@ -61,8 +61,8 @@ const categoryData = [
             },
             {
                 id: 2,
-                text: "Horror",
-                name: "horror",
+                text: "Creepy",
+                name: "creepy",
                 checked: false
             },
             {
