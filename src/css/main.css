@@ -17,10 +17,14 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   /* background-color: #121212; */
-  background-color: #1F1B24;
-  color: white;
-  display: flex;
-  flex-direction: column;
+  background-color: #e1e1df;
+  color: #626260;
+  width: 100%;
+  /* display: flex;
+  flex-direction: column; */
+}
+html, body{
+  overflow-x: hidden;
 }
 
 code {
@@ -32,11 +36,11 @@ code {
   display: flex;
   justify-content: center;
   /* background-color: #1F1B24; */
-  background-color: #121212;
+  background-color: #9f9f9d;
   width: 100%;
 }
 
-.header-container < h1 {
+.header-container > h1 {
   width: 100%;
 }
 
@@ -54,7 +58,8 @@ code {
 }
 
 .tab-list {
-  border-bottom: 1px solid #ccc;
+  border-left: 1px solid #ccc;
+  border-bottom:1px solid #ccc;
   padding-left: 0;
   display: flex;
 }
@@ -64,33 +69,72 @@ code {
   list-style: none;
   margin-bottom: -1px;
   border-right: 1px solid #ccc;
+  border-top:1px solid #ccc;
   padding: 0.5rem 0.75rem;
   flex:auto;
   justify-content: space-around;
   cursor: pointer;
 }
 
-
 .tab-list-active {
   border: solid #ccc;
   border-width: 1px 1px 0 1px;
-  background-color: #121212;
+  background-color: #9f9f9d;
   cursor: auto;
-}
-
-.tab-content {
-  justify-content: center;
 }
 
 .tabs {
   margin: 10px auto;
 }
 
+
 .main-content {
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
 }
+
+.tab-content-container{
+  display:flex;
+  flex-direction: wrap;
+  flex-wrap: wrap;
+}
+.image, .nested{
+  width:50%;
+  height: 500px;
+
+  /* align-items: center;
+  justify-content: center; */
+}
+.image{
+  align-items: center;
+  justify-content: center;
+  margin: auto;
+
+
+}
+#svg_img{
+
+  width:100%;
+  height:100%
+}
+.nested{
+  display: flex;
+  flex-direction: column;
+
+}
+.text-wrap{
+  margin-top: 0;
+  margin: auto;
+  padding-top: 0;
+}
+.audio-wrap{
+  padding-bottom: 0;
+  margin: auto;
+}
+
+/* svg{width: 100%;} */
+
 
 .footer-container {
   background-color: #121212;
@@ -118,4 +162,4 @@ svg {
   align-items: flex-start;
 
 }
-/* Styling for favorite button: */
+/* Styling for radio buttons: */
