@@ -1,5 +1,6 @@
 import React, {Component} from 'react'
 
+
 class MediaCategory extends Component {
     constructor(props) {
         super(props)
@@ -43,9 +44,9 @@ class MediaCategory extends Component {
                     {this.createCheckbox()}
                 </ul>
                 </label>
+
             </div>
         )
     }
 }
-
 export default MediaCategory

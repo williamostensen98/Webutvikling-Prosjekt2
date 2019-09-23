@@ -19,12 +19,19 @@ class App extends Component {
                 sound: "Cartoons",
                 text: "Animals"
             },
-            imageCategories: ["Animals", "Nature", "Vehicles"]
+            hasFavorite: localStorage.getItem('hasFavorite'),
+            clicks: Number(sessionStorage.getItem('clicks'))
         }
-        this.handleRadioChange = this.handleRadioChange.bind(this)
     }
 
-    handleRadioChange(button, i) {
+    incrementClick = (prevState) => {
+        sessionStorage.setItem('clicks', this.state.clicks + 1)
+        this.setState({
+            clicks: this.state.clicks + 1
+        })
+    }
+
+    handleRadioChange = (button, i) => {
         if (button.mediaLabel === "Images") {
             this.setState( prevState => ({
                 selectedButton: {
@@ -54,6 +61,33 @@ class App extends Component {
         }
     }
 
+    handleClick = () => {
+        localStorage.setItem('favoriteImage', this.state.selectedButton.image)
+        localStorage.setItem('favoriteSound', this.state.selectedButton.sound)
+        localStorage.setItem('favoriteText', this.state.selectedButton.imagtext)
+        localStorage.setItem('hasFavorite', true)
+        this.setState({
+            hasFavorite: true
+        })
+    }
+
+    applyFavorite = () => {
+        this.setState({
+            selectedButton: {
+                image: localStorage.getItem('favoriteImage'),
+                text: localStorage.getItem('favoriteText'),
+                sound: localStorage.getItem('favoriteSound')
+            }
+        })
+    }
+
+    handleRemove = () => {
+        this.setState({
+            hasFavorite: false
+        })
+        localStorage.clear()
+    }
+
     render() {
         const mediaCategories = this.state.data.map(data =>
             <MediaCategory
@@ -63,13 +97,14 @@ class App extends Component {
                 handleRadioChange={this.handleRadioChange}
             />);
         return (
-            <div>
-                <Header headerText="Project 2"/>
+            <div onClick={this.incrementClick}>
+                <Header/>
                 <div className="main-content">
                 
                     <Tabs
                         mediaCategories={this.state.data}
                         selectedButton={this.state.selectedButton}
+                        hasFavorite={this.state.hasFavorite}
                     >
                         <div label="1">
                         </div>
@@ -82,6 +117,18 @@ class App extends Component {
                     </Tabs>
                     <div className="media-categories">
                     {mediaCategories}
+                    {this.state.hasFavorite
+                        ? <button onClick={this.handleRemove}>Remove favorite</button>
+                        : <button onClick={this.handleClick}>Add to favorite</button>
+                    }
+                    {this.state.hasFavorite
+                        ? <button onClick={this.applyFavorite}>Apply favorite</button>
+                        : null
+                    }
+                    <p>Your clicks: {this.state.clicks}</p>
+
+
+
                     </div>
                 </div>
                 <Footer />
@@ -90,8 +137,5 @@ class App extends Component {
     }
 
 }
-// const container = document.createElement('div');
-// document.body.appendChild(container);
-// render(<App />, container);
 
 export default App;
