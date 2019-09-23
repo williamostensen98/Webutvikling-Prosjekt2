@@ -61,9 +61,7 @@ class TabContent extends Component {
     }
 
     renderAuthor() {
-        console.log(this.props.selectedButton.image)
         return this.state.allText[this.props.activeTab-1].author
-
     }
 
 
@@ -84,15 +82,16 @@ class TabContent extends Component {
                 <div className="image">
                     <div
                     id="svg_img"
-                    style={{marginLeft: this.props.activeTab == 1 || this.props.selectedButton.image !== "Animals" ? '0px' : '50px',
-                            marginTop: this.props.activeTab == 2 || this.props.activeTab == 4 && this.props.selectedButton.image == "Animals"? '50px': '0px' }}
+                    style={{
+                        marginLeft: this.props.activeTab === 1 || this.props.selectedButton.image !== "Animals" ? '0px' : '50px',
+                        marginTop: this.props.activeTab === 2 || (this.props.activeTab === 4 && this.props.selectedButton.image === "Animals"? '50px': '0px' )}}
                     dangerouslySetInnerHTML={{__html: this.state.image}} >
 
                     </div>
                 </div>
                 <div className="nested">
                     <div className="text-wrap">
-                        &quot;{this.renderText()}&quot;
+                        {this.renderText()}
                         <p> - {this.renderAuthor()}</p>
 
                     </div>
