@@ -8,13 +8,27 @@ class MediaCategory extends Component {
             categories: props.categories,
         }
     }
+
+    isOptionFavorite(i) {
+        if (this.props.categories[i].text === this.props.favoriteCombo.favoriteText) {
+            return true;
+        }
+        if (this.props.categories.text === this.props.favoriteCombo.favoriteImage) {
+            return true;
+        }
+        if (this.props.categories.text === this.props.favoriteCombo.favoriteSound) {
+            return true;
+        }
+        return false;
+    }
     // renderCheckbox kan utvides til å ta input for å lage en liste kategorier med props
     renderCheckbox(i) {
         return (
-            <label className="radio-label" for={this.props.id}>
+            <label className="radio-label">
                 <input
                     id={this.props.id}
                     type="radio"
+                    checked={i === this.props.index }
                     defaultChecked={this.props.categories[i].checked}
                     name={this.props.mediaLabel}
                     onClick={() => this.props.handleRadioChange(this.props, i)}>

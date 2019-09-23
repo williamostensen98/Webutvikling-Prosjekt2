@@ -3,7 +3,6 @@ import Header from './components/Header';
 import Tabs from './components/Tabs'
 import './css/main.css';
 // import { render } from "react-dom";
-import TabContent from "./components/TabContent"
 import Footer from "./components/Footer"
 import MediaCategory from "./components/MediaCategory"
 import catData from "./categoryData"
@@ -19,6 +18,7 @@ class App extends Component {
                 sound: "Cartoons",
                 text: "Animals"
             },
+            selected: [0, 0, 0],
             hasFavorite: localStorage.getItem('hasFavorite'),
             clicks: Number(sessionStorage.getItem('clicks'))
         }
@@ -32,31 +32,38 @@ class App extends Component {
     }
 
     handleRadioChange = (button, i) => {
+        const sel = [...[], ...this.state.selected];
         if (button.mediaLabel === "Images") {
+            sel[0] = i;
             this.setState( prevState => ({
                 selectedButton: {
                     sound: prevState.selectedButton.sound,
                     image: button.categories[i].text,
                     text: prevState.selectedButton.text
-                }
+                },
+                selected: sel,
             }))
         }
         if (button.mediaLabel === "Sounds") {
+            sel[1] = i;
             this.setState(prevState => ({
                 selectedButton: {
                     sound: button.categories[i].text,
                     image: prevState.selectedButton.image,
                     text: prevState.selectedButton.text
-                }
+                },
+                selected: sel,
             }))
         }
         if (button.mediaLabel === "Texts") {
+            sel[2] = i;
             this.setState(prevState => ({
                 selectedButton: {
                     text: button.categories[i].text,
                     image: prevState.selectedButton.image,
                     sound: prevState.selectedButton.sound
-                }
+                },
+                selected: sel,
             }))
         }
     }
@@ -64,7 +71,7 @@ class App extends Component {
     handleClick = () => {
         localStorage.setItem('favoriteImage', this.state.selectedButton.image)
         localStorage.setItem('favoriteSound', this.state.selectedButton.sound)
-        localStorage.setItem('favoriteText', this.state.selectedButton.imagtext)
+        localStorage.setItem('favoriteText', this.state.selectedButton.text)
         localStorage.setItem('hasFavorite', true)
         this.setState({
             hasFavorite: true
@@ -77,9 +84,15 @@ class App extends Component {
                 image: localStorage.getItem('favoriteImage'),
                 text: localStorage.getItem('favoriteText'),
                 sound: localStorage.getItem('favoriteSound')
-            }
+            },
+            selected: [
+                this.state.data[0].categories.findIndex((el) => el.text === localStorage.getItem('favoriteImage')),
+                this.state.data[1].categories.findIndex((el) => el.text === localStorage.getItem('favoriteSound')),
+                this.state.data[2].categories.findIndex((el) => el.text === localStorage.getItem('favoriteText'))
+            ]
         })
     }
+
 
     handleRemove = () => {
         this.setState({
@@ -89,18 +102,19 @@ class App extends Component {
     }
 
     render() {
-        const mediaCategories = this.state.data.map(data =>
+        const mediaCategories = this.state.data.map((data,i) =>
             <MediaCategory
                 mediaLabel={data.mediaLabel}
                 id={data.id}
                 categories={data.categories}
                 handleRadioChange={this.handleRadioChange}
+                index={this.state.selected[i]}
             />);
         return (
             <div onClick={this.incrementClick}>
                 <Header/>
                 <div className="main-content">
-                
+
                     <Tabs
                         mediaCategories={this.state.data}
                         selectedButton={this.state.selectedButton}
