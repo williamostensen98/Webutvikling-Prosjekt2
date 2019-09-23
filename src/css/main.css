@@ -34,14 +34,18 @@ code {
 
 .header-container{
   display: flex;
-  justify-content: center;
+  align-items: flex-start;
+
+  padding:0;
   /* background-color: #1F1B24; */
   background-color: #9f9f9d;
   width: 100%;
 }
 
-.header-container > h1 {
-  width: 100%;
+h6 {
+  margin:0;
+  padding:5px;
+  margin-left: 20px;
 }
 
 @import url('https://fonts.googleapis.com/css?family=Josefin+Sans&display=swap');
@@ -75,6 +79,9 @@ code {
   justify-content: space-around;
   cursor: pointer;
 }
+.tab-list-item:hover{
+  background-color: #bebebc;
+}
 
 .tab-list-active {
   border: solid #ccc;
@@ -100,7 +107,7 @@ code {
   flex-wrap: wrap;
 }
 .image, .nested{
-  width:50%;
+  width:49%;
   height: 500px;
 
   /* align-items: center;
@@ -110,13 +117,24 @@ code {
   align-items: center;
   justify-content: center;
   margin: auto;
+  padding-top: 50px;
+  box-shadow: 9px 9px #C1C1C1;
+  height: 500px;
+  background-color: white;
+  max-width:100%;
+  height:auto;
 
 
 }
 #svg_img{
 
-  width:100%;
-  height:100%
+  max-width:100%;
+  height:auto;
+
+  margin-left: 0px;
+  align-self: center;
+  justify-content: center;
+
 }
 .nested{
   display: flex;
@@ -124,9 +142,12 @@ code {
 
 }
 .text-wrap{
-  margin-top: 0;
+  /* margin-top: 0; */
   margin: auto;
+  margin-left: 25%;
   padding-top: 0;
+  /* max-width:100%; */
+  /* height:auto;  */
 }
 .audio-wrap{
   padding-bottom: 0;
@@ -145,8 +166,8 @@ svg {
 }
 
 .category-container {
-  margin: 10px auto;
-  margin-right: 5px;
+  padding: 10px;
+
 }
 
 .media-list {
@@ -159,7 +180,44 @@ svg {
   flex-wrap: wrap;
   margin-right: auto;
   flex-direction: column;
-  align-items: flex-start;
+  align-self: center;
+  border: solid 2px #C1C1C1;
 
 }
 /* Styling for radio buttons: */
+
+/* ---- RESPONSIVE STYLING WITH MEDIA QUERIES ---- */
+@media only screen and (min-width: 767px) and (max-width: 1023){
+  .media-categories{
+    padding: 50px;
+    width: 75%;
+    margin-left: 20px;
+    margin-right: 20px;
+  }
+  .audio-wrap{
+    margin-left: 150px;
+  }
+  .image{
+    margin:  0px 0px;
+  }
+
+}
+
+@media only screen and (max-width: 767px) {
+
+.image, .nested{
+  width: 100%;
+}
+
+.media-categories{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  /* padding: 2em; */
+  margin:auto;
+  max-width: 50%;
+  margin-left: 1em;
+  margin-right: 1em;
+}
+}

@@ -64,8 +64,9 @@ class App extends Component {
             />);
         return (
             <div>
-                <Header/>
+                <Header headerText="Project 2"/>
                 <div className="main-content">
+                
                     <Tabs
                         mediaCategories={this.state.data}
                         selectedButton={this.state.selectedButton}
