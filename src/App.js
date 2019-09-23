@@ -100,6 +100,7 @@ class App extends Component {
             <div onClick={this.incrementClick}>
                 <Header/>
                 <div className="main-content">
+                
                     <Tabs
                         mediaCategories={this.state.data}
                         selectedButton={this.state.selectedButton}
