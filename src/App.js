@@ -105,7 +105,7 @@ class App extends Component {
         const mediaCategories = this.state.data.map((data,i) =>
             <MediaCategory
                 mediaLabel={data.mediaLabel}
-                id={data.id}
+                key={data.id}
                 categories={data.categories}
                 handleRadioChange={this.handleRadioChange}
                 index={this.state.selected[i]}
@@ -120,14 +120,10 @@ class App extends Component {
                         selectedButton={this.state.selectedButton}
                         hasFavorite={this.state.hasFavorite}
                     >
-                        <div label="1">
-                        </div>
-                        <div label="2">
-                        </div>
-                        <div label="3">
-                        </div>
-                        <div label="4">
-                        </div>
+                        <div label="1"/>
+                        <div label="2"/>
+                        <div label="3"/>
+                        <div label="4"/>
                     </Tabs>
                     <div className="media-categories">
                         <div className="categories">{mediaCategories}</div>

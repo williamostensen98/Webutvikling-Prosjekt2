@@ -1,6 +1,7 @@
 import React, {Component} from 'react'
 
 
+
 class MediaCategory extends Component {
     constructor(props) {
         super(props)
@@ -24,7 +25,7 @@ class MediaCategory extends Component {
     // renderCheckbox kan utvides til å ta input for å lage en liste kategorier med props
     renderCheckbox(i) {
         return (
-            <label className="radio-label">
+            <label className="radio-label" key={Math.random()}>
                 <input
                     id={this.props.id}
                     type="radio"
@@ -42,7 +43,7 @@ class MediaCategory extends Component {
 
     createCheckbox = () => {
         let checkboxes = []
-        if (this.state.categories){ // This ensures that state.categories is set before for loop. prevents undefiened .length below
+        if (this.state.categories){ // This ensures that state.categories is set before for loop. prevents undefined .length below
             for (let i=0; i < this.state.categories.length; i++) {
                 checkboxes.push(this.renderCheckbox(i))
             }

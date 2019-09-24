@@ -4,13 +4,9 @@ import renderer from 'react-test-renderer'
 
 
 test("App snapshot test", () => {
-  const component = renderer.create(
+  const tree = renderer.create(
      <App />
   )
-  let tree = component.toJSON()
 
   expect(tree).toMatchSnapshot()
 })
-
-
-/* MediaCategory, Tabs, TabContent*/

@@ -135,7 +135,6 @@ exports[`App snapshot test 1`] = `
                 <input
                   checked={true}
                   defaultChecked={true}
-                  id={1}
                   name="Images"
                   onClick={[Function]}
                   type="radio"
@@ -149,7 +148,6 @@ exports[`App snapshot test 1`] = `
                 <input
                   checked={false}
                   defaultChecked={false}
-                  id={1}
                   name="Images"
                   onClick={[Function]}
                   type="radio"
@@ -163,7 +161,6 @@ exports[`App snapshot test 1`] = `
                 <input
                   checked={false}
                   defaultChecked={false}
-                  id={1}
                   name="Images"
                   onClick={[Function]}
                   type="radio"
@@ -188,7 +185,6 @@ exports[`App snapshot test 1`] = `
                 <input
                   checked={true}
                   defaultChecked={true}
-                  id={2}
                   name="Sounds"
                   onClick={[Function]}
                   type="radio"
@@ -202,7 +198,6 @@ exports[`App snapshot test 1`] = `
                 <input
                   checked={false}
                   defaultChecked={false}
-                  id={2}
                   name="Sounds"
                   onClick={[Function]}
                   type="radio"
@@ -216,7 +211,6 @@ exports[`App snapshot test 1`] = `
                 <input
                   checked={false}
                   defaultChecked={false}
-                  id={2}
                   name="Sounds"
                   onClick={[Function]}
                   type="radio"
@@ -241,7 +235,6 @@ exports[`App snapshot test 1`] = `
                 <input
                   checked={true}
                   defaultChecked={true}
-                  id={3}
                   name="Texts"
                   onClick={[Function]}
                   type="radio"
@@ -255,7 +248,6 @@ exports[`App snapshot test 1`] = `
                 <input
                   checked={false}
                   defaultChecked={false}
-                  id={3}
                   name="Texts"
                   onClick={[Function]}
                   type="radio"
@@ -269,7 +261,6 @@ exports[`App snapshot test 1`] = `
                 <input
                   checked={false}
                   defaultChecked={false}
-                  id={3}
                   name="Texts"
                   onClick={[Function]}
                   type="radio"
