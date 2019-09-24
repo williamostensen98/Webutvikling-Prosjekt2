@@ -91,7 +91,7 @@ class TabContent extends Component {
         var newText = relevantText.split("\n")
         let moreText = []
         for (var i = 0; i < newText.length ; i++) {
-            moreText.push(<p>{newText[i]}</p>)
+            moreText.push(<p key={Math.random()}>{newText[i]}</p>)
         }
         return moreText
     }
@@ -103,7 +103,7 @@ class TabContent extends Component {
                     <div
                     id="svg_img"
                     style={{
-                        marginLeft: this.props.activeTab === 1 || this.props.selectedButton.image !== "Animals" ? '0px' : '50px',
+                        marginLeft: this.props.activeTab === 1 || this.props.selectedButton.image  !== "Animals" ? '0px' : '50px',
                         marginTop: this.props.activeTab === 2 || (this.props.activeTab === 4 && this.props.selectedButton.image === "Animals"? '50px': '0px' )}}
                     dangerouslySetInnerHTML={{__html: this.state.image}} >
 
