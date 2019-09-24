@@ -7,7 +7,7 @@ exports[`Header snapshot test 1`] = `
   <header
     className="header"
   >
-    <h6 />
+    <h1 />
   </header>
 </div>
 `;

@@ -11,3 +11,6 @@ test("App snapshot test", () => {
 
   expect(tree).toMatchSnapshot()
 })
+
+
+/* MediaCategory, Tabs, TabContent*/

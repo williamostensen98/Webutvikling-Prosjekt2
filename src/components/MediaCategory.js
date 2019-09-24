@@ -42,8 +42,10 @@ class MediaCategory extends Component {
 
     createCheckbox = () => {
         let checkboxes = []
-        for (let i=0; i < this.state.categories.length; i++) {
-            checkboxes.push(this.renderCheckbox(i))
+        if (this.state.categories){ // This ensures that state.categories is set before for loop. prevents undefiened .length below
+            for (let i=0; i < this.state.categories.length; i++) {
+                checkboxes.push(this.renderCheckbox(i))
+            }
         }
         return checkboxes
     }

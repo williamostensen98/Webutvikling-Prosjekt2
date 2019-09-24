@@ -10,7 +10,9 @@ exports[`App snapshot test 1`] = `
     <header
       className="header"
     >
-      <h6 />
+      <h1>
+        Project 2
+      </h1>
     </header>
   </div>
   <div
@@ -96,9 +98,18 @@ exports[`App snapshot test 1`] = `
               className="audio-wrap"
             >
               <audio
-                controls={true}
+                id="Player"
                 src="./media/sounds/Cartoons/1.mp3"
               />
+              <button
+                className="controls"
+                onClick={[Function]}
+              >
+                ► / 
+                <b>
+                  ||
+                </b>
+              </button>
             </div>
           </div>
         </div>
@@ -108,173 +119,181 @@ exports[`App snapshot test 1`] = `
       className="media-categories"
     >
       <div
-        className="category-container"
+        className="categories"
       >
-        <label>
-          Images
-          <ul
-            className="media-list"
-          >
-            <label
-              className="radio-label"
+        <div
+          className="category-container"
+        >
+          <label>
+            Images
+            <ul
+              className="media-list"
             >
-              <input
-                checked={true}
-                defaultChecked={true}
-                id={1}
-                name="Images"
-                onClick={[Function]}
-                type="radio"
-              />
-              Animals
-              <br />
-            </label>
-            <label
-              className="radio-label"
+              <label
+                className="radio-label"
+              >
+                <input
+                  checked={true}
+                  defaultChecked={true}
+                  id={1}
+                  name="Images"
+                  onClick={[Function]}
+                  type="radio"
+                />
+                Animals
+                <br />
+              </label>
+              <label
+                className="radio-label"
+              >
+                <input
+                  checked={false}
+                  defaultChecked={false}
+                  id={1}
+                  name="Images"
+                  onClick={[Function]}
+                  type="radio"
+                />
+                Vehicles
+                <br />
+              </label>
+              <label
+                className="radio-label"
+              >
+                <input
+                  checked={false}
+                  defaultChecked={false}
+                  id={1}
+                  name="Images"
+                  onClick={[Function]}
+                  type="radio"
+                />
+                Nature
+                <br />
+              </label>
+            </ul>
+          </label>
+        </div>
+        <div
+          className="category-container"
+        >
+          <label>
+            Sounds
+            <ul
+              className="media-list"
             >
-              <input
-                checked={false}
-                defaultChecked={false}
-                id={1}
-                name="Images"
-                onClick={[Function]}
-                type="radio"
-              />
-              Vehicles
-              <br />
-            </label>
-            <label
-              className="radio-label"
+              <label
+                className="radio-label"
+              >
+                <input
+                  checked={true}
+                  defaultChecked={true}
+                  id={2}
+                  name="Sounds"
+                  onClick={[Function]}
+                  type="radio"
+                />
+                Cartoons
+                <br />
+              </label>
+              <label
+                className="radio-label"
+              >
+                <input
+                  checked={false}
+                  defaultChecked={false}
+                  id={2}
+                  name="Sounds"
+                  onClick={[Function]}
+                  type="radio"
+                />
+                Jazz
+                <br />
+              </label>
+              <label
+                className="radio-label"
+              >
+                <input
+                  checked={false}
+                  defaultChecked={false}
+                  id={2}
+                  name="Sounds"
+                  onClick={[Function]}
+                  type="radio"
+                />
+                Horror
+                <br />
+              </label>
+            </ul>
+          </label>
+        </div>
+        <div
+          className="category-container"
+        >
+          <label>
+            Texts
+            <ul
+              className="media-list"
             >
-              <input
-                checked={false}
-                defaultChecked={false}
-                id={1}
-                name="Images"
-                onClick={[Function]}
-                type="radio"
-              />
-              Nature
-              <br />
-            </label>
-          </ul>
-        </label>
+              <label
+                className="radio-label"
+              >
+                <input
+                  checked={true}
+                  defaultChecked={true}
+                  id={3}
+                  name="Texts"
+                  onClick={[Function]}
+                  type="radio"
+                />
+                Animals
+                <br />
+              </label>
+              <label
+                className="radio-label"
+              >
+                <input
+                  checked={false}
+                  defaultChecked={false}
+                  id={3}
+                  name="Texts"
+                  onClick={[Function]}
+                  type="radio"
+                />
+                Creepy
+                <br />
+              </label>
+              <label
+                className="radio-label"
+              >
+                <input
+                  checked={false}
+                  defaultChecked={false}
+                  id={3}
+                  name="Texts"
+                  onClick={[Function]}
+                  type="radio"
+                />
+                Jokes
+                <br />
+              </label>
+            </ul>
+          </label>
+        </div>
       </div>
       <div
-        className="category-container"
+        className="buttons"
       >
-        <label>
-          Sounds
-          <ul
-            className="media-list"
-          >
-            <label
-              className="radio-label"
-            >
-              <input
-                checked={true}
-                defaultChecked={true}
-                id={2}
-                name="Sounds"
-                onClick={[Function]}
-                type="radio"
-              />
-              Cartoons
-              <br />
-            </label>
-            <label
-              className="radio-label"
-            >
-              <input
-                checked={false}
-                defaultChecked={false}
-                id={2}
-                name="Sounds"
-                onClick={[Function]}
-                type="radio"
-              />
-              Jazz
-              <br />
-            </label>
-            <label
-              className="radio-label"
-            >
-              <input
-                checked={false}
-                defaultChecked={false}
-                id={2}
-                name="Sounds"
-                onClick={[Function]}
-                type="radio"
-              />
-              Horror
-              <br />
-            </label>
-          </ul>
-        </label>
+        <button
+          onClick={[Function]}
+        >
+          Add to favorite
+        </button>
+        <p>
+          Your clicks: 
+          0
+        </p>
       </div>
-      <div
-        className="category-container"
-      >
-        <label>
-          Texts
-          <ul
-            className="media-list"
-          >
-            <label
-              className="radio-label"
-            >
-              <input
-                checked={true}
-                defaultChecked={true}
-                id={3}
-                name="Texts"
-                onClick={[Function]}
-                type="radio"
-              />
-              Animals
-              <br />
-            </label>
-            <label
-              className="radio-label"
-            >
-              <input
-                checked={false}
-                defaultChecked={false}
-                id={3}
-                name="Texts"
-                onClick={[Function]}
-                type="radio"
-              />
-              Creepy
-              <br />
-            </label>
-            <label
-              className="radio-label"
-            >
-              <input
-                checked={false}
-                defaultChecked={false}
-                id={3}
-                name="Texts"
-                onClick={[Function]}
-                type="radio"
-              />
-              Jokes
-              <br />
-            </label>
-          </ul>
-        </label>
-      </div>
-      <button
-        onClick={[Function]}
-      >
-        Add to favorite
-      </button>
-      <p>
-        Your clicks: 
-        0
-      </p>
     </div>
   </div>
   <div

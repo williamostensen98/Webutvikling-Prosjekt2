@@ -7,10 +7,9 @@ import renderer from "react-test-renderer"
 
 test("MediaCategory snapshot test", () => {
   const component = renderer.create(
-    <MediaCategory/>
+    <MediaCategory />
   )
   let tree = component.toJSON()
 
   expect(tree).toMatchSnapshot()
 })
- 
