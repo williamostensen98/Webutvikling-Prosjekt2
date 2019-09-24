@@ -11,9 +11,9 @@ class Header extends Component {
         return (
             <div className="header-container">
                 <header className="header">
-                    <h6>
-                        {this.props.headerText}
-                    </h6>
+                <h1>
+                    {this.props.headerText}
+                </h1>
                 </header>
             </div>
         )
