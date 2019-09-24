@@ -12,11 +12,31 @@ class TabContent extends Component {
             audio: "",
             textID: 1,
             image: "",
+            isPlaying: false,
             allText: [{author: "",
                         text: ""
                     }]
         }
+
+
+
     }
+    handlePlay(){
+        var object = this.refs.Player;
+        if(!this.state.isPlaying){
+            object.play()
+        }
+        else{
+            object.pause()
+        }
+
+        this.setState(prevState =>({
+            isPlaying: !prevState.isPlaying
+            })
+        )
+
+    }
+
     // Fetching images using AJAX and fetch() function
     getImage() {
         fetch("./media/svg/" + this.props.selectedButton.image + "/" + this.props.activeTab + ".svg")
@@ -92,13 +112,16 @@ class TabContent extends Component {
                 </div>
                 <div className="nested">
                     <div className="text-wrap">
-                        &quot;{this.renderText()}&quot;
+                        {this.renderText()}
                         <p> - {this.renderAuthor()}</p>
 
                     </div>
 
-                    <div className="audio-wrap">
-                        <audio src={this.state.audio} controls />
+                    <div className="audio-wrap" >
+                        <audio id="Player" ref="Player" src={this.state.audio} />
+                        <button className="controls" onClick={(e) => this.handlePlay(e)}>&#9658; / <b>||</b></button>
+
+
                     </div>
                 </div>
             </div>
