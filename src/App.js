@@ -112,7 +112,7 @@ class App extends Component {
             />);
         return (
             <div onClick={this.incrementClick}>
-                <Header/>
+                <Header headerText="Project 2"/>
                 <div className="main-content">
 
                     <Tabs
@@ -130,19 +130,21 @@ class App extends Component {
                         </div>
                     </Tabs>
                     <div className="media-categories">
-                    {mediaCategories}
-                    {this.state.hasFavorite
-                        ? <button onClick={this.handleRemove}>Remove favorite</button>
-                        : <button onClick={this.handleClick}>Add to favorite</button>
-                    }
-                    {this.state.hasFavorite
-                        ? <button onClick={this.applyFavorite}>Apply favorite</button>
-                        : null
-                    }
-                    <p>Your clicks: {this.state.clicks}</p>
+                        <div className="categories">{mediaCategories}</div>
+
+                        <div className="buttons">
+                            {this.state.hasFavorite
+                                ? <button onClick={this.handleRemove}>Remove favorite</button>
+                                : <button onClick={this.handleClick}>Add to favorite</button>
+                            }
+                            {this.state.hasFavorite
+                                ? <button onClick={this.applyFavorite}>Apply favorite</button>
+                                : null
+                            }
+                            <p>Your clicks: {this.state.clicks}</p>
 
 
-
+                        </div>
                     </div>
                 </div>
                 <Footer />
