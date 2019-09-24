@@ -12,7 +12,7 @@ class TabContent extends Component {
             audio: "",
             textID: 1,
             image: "",
-            isPlaying: false,
+            
             allText: [{author: "",
                         text: ""
                     }]
@@ -23,17 +23,16 @@ class TabContent extends Component {
     }
     handlePlay(){
         var object = this.refs.Player;
-        if(!this.state.isPlaying){
+        if(object.paused){
             object.play()
         }
         else{
             object.pause()
         }
 
-        this.setState(prevState =>({
-            isPlaying: !prevState.isPlaying
-            })
-        )
+
+
+
 
     }
 
