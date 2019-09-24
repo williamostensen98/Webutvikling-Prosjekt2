@@ -9,7 +9,8 @@
     "react-dom": "^16.9.0",
     "react-scripts": "3.1.1",
     "react-svg": "^10.0.21",
-    "react-tabs": "^3.0.0"
+    "react-tabs": "^3.0.0",
+    "react-test-renderer": "^16.9.0"
   },
   "scripts": {
     "start": "react-scripts start",

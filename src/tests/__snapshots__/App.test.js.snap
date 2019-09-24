@@ -1,0 +1,286 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`App snapshot test 1`] = `
+<div
+  onClick={[Function]}
+>
+  <div
+    className="header-container"
+  >
+    <header
+      className="header"
+    >
+      <h6 />
+    </header>
+  </div>
+  <div
+    className="main-content"
+  >
+    <div
+      className="tabs"
+    >
+      <ol
+        className="tab-list"
+      >
+        <li
+          className="tab-list-item tab-list-active"
+          onClick={[Function]}
+        >
+          Tab 
+          1
+        </li>
+        <li
+          className="tab-list-item"
+          onClick={[Function]}
+        >
+          Tab 
+          2
+        </li>
+        <li
+          className="tab-list-item"
+          onClick={[Function]}
+        >
+          Tab 
+          3
+        </li>
+        <li
+          className="tab-list-item"
+          onClick={[Function]}
+        >
+          Tab 
+          4
+        </li>
+      </ol>
+      <div
+        className="tab-content"
+      />
+      <div
+        label="1"
+      >
+        <div
+          className="tab-content-container"
+        >
+          <div
+            className="image"
+          >
+            <div
+              dangerouslySetInnerHTML={
+                Object {
+                  "__html": "",
+                }
+              }
+              id="svg_img"
+              style={
+                Object {
+                  "marginLeft": "50px",
+                  "marginTop": "0px",
+                }
+              }
+            />
+          </div>
+          <div
+            className="nested"
+          >
+            <div
+              className="text-wrap"
+            >
+              <p>
+                
+              </p>
+              <p>
+                 - 
+                
+              </p>
+            </div>
+            <div
+              className="audio-wrap"
+            >
+              <audio
+                controls={true}
+                src="./media/sounds/Cartoons/1.mp3"
+              />
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div
+      className="media-categories"
+    >
+      <div
+        className="category-container"
+      >
+        <label>
+          Images
+          <ul
+            className="media-list"
+          >
+            <label
+              className="radio-label"
+            >
+              <input
+                checked={true}
+                defaultChecked={true}
+                id={1}
+                name="Images"
+                onClick={[Function]}
+                type="radio"
+              />
+              Animals
+              <br />
+            </label>
+            <label
+              className="radio-label"
+            >
+              <input
+                checked={false}
+                defaultChecked={false}
+                id={1}
+                name="Images"
+                onClick={[Function]}
+                type="radio"
+              />
+              Vehicles
+              <br />
+            </label>
+            <label
+              className="radio-label"
+            >
+              <input
+                checked={false}
+                defaultChecked={false}
+                id={1}
+                name="Images"
+                onClick={[Function]}
+                type="radio"
+              />
+              Nature
+              <br />
+            </label>
+          </ul>
+        </label>
+      </div>
+      <div
+        className="category-container"
+      >
+        <label>
+          Sounds
+          <ul
+            className="media-list"
+          >
+            <label
+              className="radio-label"
+            >
+              <input
+                checked={true}
+                defaultChecked={true}
+                id={2}
+                name="Sounds"
+                onClick={[Function]}
+                type="radio"
+              />
+              Cartoons
+              <br />
+            </label>
+            <label
+              className="radio-label"
+            >
+              <input
+                checked={false}
+                defaultChecked={false}
+                id={2}
+                name="Sounds"
+                onClick={[Function]}
+                type="radio"
+              />
+              Jazz
+              <br />
+            </label>
+            <label
+              className="radio-label"
+            >
+              <input
+                checked={false}
+                defaultChecked={false}
+                id={2}
+                name="Sounds"
+                onClick={[Function]}
+                type="radio"
+              />
+              Horror
+              <br />
+            </label>
+          </ul>
+        </label>
+      </div>
+      <div
+        className="category-container"
+      >
+        <label>
+          Texts
+          <ul
+            className="media-list"
+          >
+            <label
+              className="radio-label"
+            >
+              <input
+                checked={true}
+                defaultChecked={true}
+                id={3}
+                name="Texts"
+                onClick={[Function]}
+                type="radio"
+              />
+              Animals
+              <br />
+            </label>
+            <label
+              className="radio-label"
+            >
+              <input
+                checked={false}
+                defaultChecked={false}
+                id={3}
+                name="Texts"
+                onClick={[Function]}
+                type="radio"
+              />
+              Creepy
+              <br />
+            </label>
+            <label
+              className="radio-label"
+            >
+              <input
+                checked={false}
+                defaultChecked={false}
+                id={3}
+                name="Texts"
+                onClick={[Function]}
+                type="radio"
+              />
+              Jokes
+              <br />
+            </label>
+          </ul>
+        </label>
+      </div>
+      <button
+        onClick={[Function]}
+      >
+        Add to favorite
+      </button>
+      <p>
+        Your clicks: 
+        0
+      </p>
+    </div>
+  </div>
+  <div
+    className="footer-container"
+  >
+    <footer />
+  </div>
+</div>
+`;
