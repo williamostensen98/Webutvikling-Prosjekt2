@@ -1,15 +1,6 @@
 import React, {Component} from 'react'
 
-
-
-class MediaCategory extends Component {
-    constructor(props) {
-        super(props)
-        this.state = {
-            categories: props.categories,
-        }
-    }
-
+export default class MediaCategory extends Component {
     isOptionFavorite(i) {
         if (this.props.categories[i].text === this.props.favoriteCombo.favoriteText) {
             return true;
@@ -43,8 +34,8 @@ class MediaCategory extends Component {
 
     createCheckbox = () => {
         let checkboxes = []
-        if (this.state.categories){ // This ensures that state.categories is set before for loop. prevents undefined .length below
-            for (let i=0; i < this.state.categories.length; i++) {
+        if (this.props.categories){ // This ensures that state.categories is set before for loop. prevents undefined .length below
+            for (let i=0; i < this.props.categories.length; i++) {
                 checkboxes.push(this.renderCheckbox(i))
             }
         }
@@ -66,4 +57,3 @@ class MediaCategory extends Component {
         )
     }
 }
-export default MediaCategory

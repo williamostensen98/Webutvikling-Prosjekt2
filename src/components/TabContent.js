@@ -7,15 +7,14 @@ class TabContent extends Component {
     constructor(props) {
         super(props)
         this.state = {
-            categoryData: this.props.categoryData,
             imgID: 1,
             audio: "",
             textID: 1,
             image: "",
-            
-            allText: [{author: "",
-                        text: ""
-                    }]
+            allText: [{
+                author: "",
+                text: ""
+            }]
         }
 
 
@@ -29,11 +28,6 @@ class TabContent extends Component {
         else{
             object.pause()
         }
-
-
-
-
-
     }
 
     // Fetching images using AJAX and fetch() function

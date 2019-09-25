@@ -1,5 +1,5 @@
 // Src for inspiration for tabs: https://alligator.io/react/tabs-component/
-import React, {Component} from 'react';
+import React from 'react';
 import PropTypes from 'prop-types';
 
 
