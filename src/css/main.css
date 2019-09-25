@@ -129,14 +129,13 @@ header-container > h1 {
   background-color: white;
   max-width:100%;
   height:auto;
-
+  border-radius: 10px;
 
 }
 #svg_img{
 
   max-width:100%;
   height:auto;
-
   margin-left: 0px;
   align-self: center;
   justify-content: center;
@@ -190,6 +189,7 @@ svg {
 .categories{
   border: solid 2px #C1C1C1;
   margin:auto;
+  border-radius: 10px;
 }
 
 .media-categories {
@@ -205,7 +205,6 @@ svg {
   display: grid;
   grid-template-rows: 1fr 1fr;
   grid-gap: 1.5rem;
-
   margin-top: 20px;
   align-items: space-evenly;
   justify-content:space-evenly ;
@@ -222,6 +221,7 @@ button{
   text-decoration: none;
   display: inline-block;
   font-size: 16px;
+  border-radius: 10px;
 }
 button:hover{
   background-color: #bebebc;

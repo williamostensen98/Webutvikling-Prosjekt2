@@ -12,13 +12,11 @@ class TabContent extends Component {
             audio: "",
             textID: 1,
             image: "",
-            
+
             allText: [{author: "",
                         text: ""
                     }]
         }
-
-
 
     }
     handlePlay(){
@@ -29,11 +27,6 @@ class TabContent extends Component {
         else{
             object.pause()
         }
-
-
-
-
-
     }
 
     // Fetching images using AJAX and fetch() function
