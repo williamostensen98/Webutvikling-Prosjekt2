@@ -17,8 +17,6 @@ class TabContent extends Component {
             }]
         }
 
-
-
     }
     handlePlay(){
         var object = this.refs.Player;
