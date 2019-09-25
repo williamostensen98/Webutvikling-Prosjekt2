@@ -1,37 +1,18 @@
 // Src for inspiration for tabs: https://alligator.io/react/tabs-component/
-import React, {Component} from 'react';
+import React from 'react';
 import PropTypes from 'prop-types';
 
 
-class Tab extends Component {
-  static propTypes = {
-    activeTab: PropTypes.string.isRequired,
-    label: PropTypes.string.isRequired,
-    onClick: PropTypes.func.isRequired,
-  };
-
-  constructor(props) {
-    super(props);
-    this.state = {
-    }
-  }
-
-  // onClick = () => {
-  //   const { label, onClick } = this.props;
-  //   onClick(label);
-  // }
-
-  render() {
-    const activeTab = this.props.activeTab;
-    const label = this.props.label;
-    const onClick = this.props.onClick;
+export default function Tab(props) {
+    const activeTab = props.activeTab;
+    const label = props.label;
+    const onClick = props.onClick;
 
     let className = 'tab-list-item';
 
     if (activeTab === label) {
       className += ' tab-list-active';
     }
-
     return (
       <li
         className={className}
@@ -39,8 +20,11 @@ class Tab extends Component {
       >
         Tab {label}
       </li>
-    );
-  }
+    )
 }
 
-export default Tab;
+Tab.propTypes = {
+  activeTab: PropTypes.string.isRequired,
+  label: PropTypes.string.isRequired,
+  onClick: PropTypes.func.isRequired,
+}
