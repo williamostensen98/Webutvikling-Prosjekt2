@@ -1,9 +1,0 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
-
-exports[`Tab snapshot test 1`] = `
-<li
-  className="tab-list-item tab-list-active"
->
-  Tab 
-</li>
-`;
