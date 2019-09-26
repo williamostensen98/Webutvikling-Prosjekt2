@@ -63,7 +63,7 @@ class TabContent extends Component {
 
     }
     componentDidUpdate(prevProps, prevState){
-        if(this.props.activeTab !==  prevProps.activeTab || this.props.selectedButton !== prevProps.selectedButton){
+         if(this.props.activeTab !==  prevProps.activeTab || this.props.selectedButton !== prevProps.selectedButton){
             this.getSoundCombos()
             this.getImage()
             this.getText()
