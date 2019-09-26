@@ -7,6 +7,12 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 
 ## Innhold & Funksjonalitet
 
+Prosjekt 2 i IT2810 Webutvikling omhandler å lage en webapplikasjon som inneholder en utstilling som består av ulike kombinasjoner av lyd, tekst og SVG-grafikk. Utstillingen skal være interaktiv i form av at kombinasjonene som vises skal være brukerstyrte. 
+
+Brukeren får muligheten til å velge én av tre kategorier innen både lyd, tekst og bilde ved å trykke på knapper ved der kategoriene er listet opp. Med en gang nevnte kategorier er valgt, vil det komme fire ulike kombinasjoner i fire ulike faner. Ved å navigere seg frem og tilbake mellom disse fanene, vil brukeren kunne se utstillingen som er basert på vedkommendes ønske. Dersom brukeren velger å bytte kategori innenfor minst én av medietypene, vil en ny utstilling bestående av nye kombinasjoner vises i fanene umiddelbart. 
+
+Brukeren har også muligheten til å lagre sin favorittkombinasjon av kategorier dersom dette skulle være ønskelig. Denne kan hentes ut igjen ved senere anledning selv om brukeren lager andre kombinasjoner i mellomtiden, eller velger å lukke nettleservinduet. 
+
 
 ## Krav til Teknologi
 
@@ -66,8 +72,27 @@ Dersom brukeren lukker fanen tilbakestilles denne telleren, men om siden oppdate
 ### Responsive Web Design
 
 
+Siden har en fleksibel layout ved at den tilpasser seg skjerm og orientering på skjerm. 
+Dette skjer blant annet gjennom bruk av CSS Flexbox som ved å bruke  
+  `flex-wrap: wrap` gjør at elementer som ikke får plass i bredden legger seg under de andre elementene.
+Dette er for eksempel brukt på `Favorite`-knappen og kategoriene når man går fra Ipad eller mobil i liggende stilling til mobil stående. 
+Da går knappen(e) og kategoriene fra bredde til høydeformat lik bildet og tekst. 
+
+I `index.html` er det også brukt _Viewport_ i `<meta>`-taggen. Denne styrer enhetens synlige område og sier noe om hvordan siden skal skaleres i forhold til enheten.
+For å bytte mellom breddeformat og høyde format på layouten mellom mobile/Ipad og Desktop er det brukt media queries i CSS. 
+Siden Flexbox er fleksibel på layout med skalering trengtes det kun en query som går på når skjermen er mindre enn 768 px(for mobil og Ipad). 
+Da byttes layouten til høyde format, bildene skaleres til hele skjermen og marginene fikses. 
+
+Det er også brukt `Viewbox` på svg-bildene da dette sørger for at bildene blir riktig skalert til skjermen når dette endres.
+
+### Testing
 
 
+***Testing m/ JEST***
+
+***Testing Av Responsive Design***
+Siden er blitt testet på 3 ulike enheter, Iphone 7, Ipad Pro og Pc(Desktop) og da både ved vertikal og horisontal orientering. Her har vi sjekket om alle bildene skalerer riktig til skjermstørrelsen og om layouten er riktig(breddeformat vs. høydeformet) på de ulike enhetene.
+Hvordan dette funker og satt opp kan man lese om under _Responsive Web Design_. 
 
 
 
