@@ -3,6 +3,76 @@
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
+# Dokumentasjon
+
+## Innhold & Funksjonalitet
+
+
+## Krav til Teknologi
+
+### React
+
+Dette prosjektet er laget i [React](https://reactjs.org/) og baserer seg på _JSX_ og _Javascript ES6_ som fører med seg ny syntaks og features som skal gjøre koden mer leselig og moderne. Med ES6 blir det introdusert bl.a. _arrow functions_, _klasser_ og _arv_ mm. 
+
+Prosjektet er bygget opp av både funksjonelle- og klasse komponenter. Funksjonelle komnponenter er gjerne enklere å lese og teste da det er kun ren Javascript som ikke baserer seg på `state` eller `lifecycles`. Dette gjør at man gjerne ender opp med mindre kode. 
+Når man må bruke state eller lifecycle-metoder er det hensiktsmessig å bruke klasse-baserte funksjoner da man ikke kan endre tilstand gjennom `setState()` i funksjonelle komponenter. Vi har derfor brukt funksjonelle komponenter der vi ikke har hatt bruk for state for å forenkle kode og leselighet samt testing (eks. Header, Footer og Tab komponentene) og Classes der det har vært nødvendig med endring av tilstand og lifecycle-methods som `componentDidMount()` og `componentDidUpdate()`. 
+UI-komponenter er implementert fra bunnen av og prosjektet er bygget på en komponentstruktur vi synes var hensiktsmessig og var komfortable med. 
+
+### Ajax
+
+I dette prosjektet var det et krav om å benytte Ajax (Asynchronous JavaScript and XML). Dette har vi valgt å løse ved å bruke fetch()-funksjonen for å laste inn JSON- og SVG-filer. 
+Vi har valgt å definere én get-metode hver for SVG-, JSON- og mp3-fil i TabContent.js. For å slippe å hardkode hver fil som skal fetches, konstruerer vi en string som angir pathen til filen basert på hvilke props som sendes ned til TabContent-komponenten. 
+I praksis ser det slik ut for getImage()-metoden:
+
+```javascript	 
+fetch("./media/svg/" + this.props.selectedButton.image + "/"
+ 	+ this.props.activeTab + ".svg")
+ ```
+
+der `this.props.selectedButton.image` er enten “Animals”, “Vehicles” eller “Nature”, og `this.props.activeTab` er 1, 2, 3 eller 4.
+
+Dette fungerer fordi vi har valgt å navngi mapper og filer i media-mappen i tråd med hvilken kategori og tråd som er valgt og dermed lagret i state til App.js.
+Hierarkiet i svg ser for eksempel slik ut:
+
+```
+|-- svg
+   |-- Animals
+       |-- 1.svg
+	   |-- 2.svg
+	   |-- 3.svg
+	   |-- 4.svg
+	        .
+	        .
+	        .
+```
+
+Tilsvarende løsninger er gjort for å hente ut JSON og mp3-filer, slik at samme logikk benyttes konsekvent for å hente data. 
+
+Filene blir kun lastet hvis de blir brukt, ettersom kall til get-metodene kun gjøres med tilhørende path-verdi dersom man enten skifter fane, eller endrer kategori i media-buttons. 
+Dermed hentes alltid kun ett medie-element ut om gangen. For å forhindre utilsiktede kall til get-metodene benytter vi livssyklusmetodene `componentDidMount()` og `componentDidUpdate()` med betingelser om å kun gjøre kall til get-metodene dersom aktiv fane eller valgt kategori endrer seg. 
+
+
+### Caching
+For å unngå at filer lastes inn flere ganger har vi implementert caching gjennom Apache2, som brukes som web-server. 
+For å få til dette fulgte vi [denne](https://www.digitalocean.com/community/tutorials/how-to-configure-apache-content-caching-on-ubuntu-14-04) guiden. Ved å bruke Chrome Developer Tools og se under Network fanen, får vi bekreftet at bildet caches lokalt på maskinen. 
+
+### HTML Web Storage
+Vi har tatt i bruk både session storage og local storage i dette prosjektet. Local storage brukes slik at brukeren kan lagre en favorittkombinasjon, og neste gang brukeren besøker nettsiden, vil nettsiden se at brukeren har en favoritt, og presentere en “Apply favorite”-knapp for brukeren.
+Man kan også fjerne local storage ved å trykke på “Remove favorite”. Vi har lagt inn betingelser slik at brukeren kun får presentert knappene dersom funksjonaliteten er tilgjengelig. 
+
+For session storage har vi valgt en enklere løsning. Under valgene for mediekategori er det en klikkteller som inkrementeres hver gang brukeren klikker et vilkårlig sted på siden.
+Dersom brukeren lukker fanen tilbakestilles denne telleren, men om siden oppdateres husker den hvor du var.
+
+### Responsive Web Design
+
+
+
+
+
+
+
+
+
 ## Available Scripts
 
 In the project directory, you can run:
