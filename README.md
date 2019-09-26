@@ -91,12 +91,14 @@ Det er også brukt `Viewbox` på svg-bildene da dette sørger for at bildene bli
 ***Testing m/ JEST***
 
 ***Testing Av Responsive Design***
+    
 Siden er blitt testet på 3 ulike enheter, Iphone 7, Ipad Pro og Pc(Desktop) og da både ved vertikal og horisontal orientering. Her har vi sjekket om alle bildene skalerer riktig til skjermstørrelsen og om layouten er riktig(breddeformat vs. høydeformet) på de ulike enhetene.
 Hvordan dette funker og satt opp kan man lese om under _Responsive Web Design_. 
 
 
 
-
+    
+    
 
 ## Available Scripts
 
