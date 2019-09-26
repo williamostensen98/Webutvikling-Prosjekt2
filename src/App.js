@@ -146,7 +146,7 @@ class App extends Component {
                         </div>
                     </div>
                 </div>
-                <Footer />
+                <Footer footerText="NTNU @ Gruppe 39 - William Østensen, Victor Jørgensen & Jenny Yu"/>
             </div>
         );
     }

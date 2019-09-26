@@ -1,11 +1,13 @@
 import React from 'react';
 
 
-export default function Footer()  {
+export default function Footer(props)  {
     return (
         <div className="footer-container">
-            <footer>
-            </footer>
+            <h3>
+                {props.footerText}
+
+            </h3>
         </div>
     )
 }

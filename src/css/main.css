@@ -36,7 +36,7 @@ code {
     monospace;
 }
 
-.header-container{
+.header-container, .footer-container{
   display: flex;
   align-items: center;
   justify-content: center;
@@ -44,11 +44,13 @@ code {
   /* background-color: #1F1B24; */
   background-color: #9f9f9d;
   width: 100%;
+
 }
 
-header-container > h1 {
+/* header-container > h1 {
   width: 100%;
-}
+} */
+
 
 @import url('https://fonts.googleapis.com/css?family=Josefin+Sans&display=swap');
 .header {
@@ -56,6 +58,11 @@ header-container > h1 {
   font-size: 36px;
   color: white;
 
+}
+.footer-container{
+  font-family: 'Josefin Sans', sans-serif;
+  color: white;
+  text-align: justify;
 }
 
 .tabs {
@@ -172,9 +179,7 @@ header-container > h1 {
 /* svg{width: 100%;} */
 
 
-.footer-container {
-  background-color: #121212;
-}
+
 
 svg {
   /* background-color: #121212; */
