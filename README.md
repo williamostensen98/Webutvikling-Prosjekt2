@@ -88,20 +88,26 @@ Det er også brukt `Viewbox` på svg-bildene da dette sørger for at bildene bli
 ### Testing
 
 
-***Testing m/ JEST***
+***Testing m/ JEST***    
+  
+I dette prosjektet har det blitt utført snapshot-testing med Jest. Snapshot-testing fungerer ved at man renderer DOMet til applikasjonen og tar en snapshot av det som sier noe om hvordan nettsiden har blitt konstruert. 
+Når testene kjøres ved senere anledning renderes DOMet på nytt, en ny snapshot blir tatt og den blir sammenlignet med snapshotten fra tidligere. Dersom testen feiler betyr det at nettsiden har renderet på en annen måte, noe som skyldes noe som har blitt gjort under utviklingen av applikasjonen. 
+Denne typen testing er hensiktsmessig da den forteller om grensesnittet har forandret seg siden sist test. Hvis endringen var intensjonell må man oppdatere den lagrede snapshotten med det nye. 
+
+Testene skrevet for denne webapplikasjonen er for klassene App.js, categoryData.js, Footer.js, Header.js og MediaCategory.js. 
 
 ***Testing Av Responsive Design***
     
 Siden er blitt testet på 3 ulike enheter, Iphone 7, Ipad Pro og Pc(Desktop) og da både ved vertikal og horisontal orientering. Her har vi sjekket om alle bildene skalerer riktig til skjermstørrelsen og om layouten er riktig(breddeformat vs. høydeformet) på de ulike enhetene.
 Hvordan dette funker og satt opp kan man lese om under _Responsive Web Design_. 
 
-
-
-    
-    
-
+     
+     
+         
+         
+---
 ## Available Scripts
-
+  
 In the project directory, you can run:
 
 ### `npm start`
