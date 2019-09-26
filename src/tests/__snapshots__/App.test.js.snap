@@ -11,7 +11,7 @@ exports[`App snapshot test 1`] = `
       className="header"
     >
       <h1>
-        Project 2
+        IT2810 - Project 2
       </h1>
     </header>
   </div>
@@ -74,8 +74,7 @@ exports[`App snapshot test 1`] = `
               id="svg_img"
               style={
                 Object {
-                  "marginLeft": "50px",
-                  "marginTop": "0px",
+                  "marginLeft": "0px",
                 }
               }
             />
@@ -290,7 +289,9 @@ exports[`App snapshot test 1`] = `
   <div
     className="footer-container"
   >
-    <footer />
+    <h3>
+      NTNU @ Gruppe 39 - William Østensen, Victor Jørgensen & Jenny Yu
+    </h3>
   </div>
 </div>
 `;
