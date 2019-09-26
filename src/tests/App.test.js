@@ -4,9 +4,11 @@ import renderer from 'react-test-renderer'
 
 
 test("App snapshot test", () => {
-  const tree = renderer.create(
+  const component = renderer.create(
      <App />
   )
+
+  let tree = component.toJSON()
 
   expect(tree).toMatchSnapshot()
 })
