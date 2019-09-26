@@ -94,8 +94,7 @@ class TabContent extends Component {
                     <div
                     id="svg_img"
                     style={{
-                        marginLeft: this.props.activeTab === 1 || this.props.selectedButton.image  !== "Animals" ? '0px' : '50px',
-                        marginTop: this.props.activeTab === 2 || (this.props.activeTab === 4 && this.props.selectedButton.image === "Animals"? '50px': '0px' )}}
+                        marginLeft: this.props.activeTab == 1 || this.props.activeTab == 3 || this.props.selectedButton.image !== "Animals" ? '0px' : '50px'}}
                     dangerouslySetInnerHTML={{__html: this.state.image}} >
 
                     </div>
