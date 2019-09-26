@@ -20,7 +20,10 @@ class App extends Component {
             },
             selected: [0, 0, 0],
             hasFavorite: localStorage.getItem('hasFavorite'),
-            clicks: Number(sessionStorage.getItem('clicks'))
+            clicks: Number(sessionStorage.getItem('clicks')),
+            loadedPictures: [
+
+            ]
         }
     }
 
@@ -112,7 +115,7 @@ class App extends Component {
             />);
         return (
             <div onClick={this.incrementClick}>
-                <Header headerText="Project 2"/>
+                <Header headerText="IT2810 - Project 2"/>
                 <div className="main-content">
 
                     <Tabs

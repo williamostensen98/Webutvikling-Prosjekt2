@@ -225,6 +225,7 @@ button{
 }
 button:hover{
   background-color: #bebebc;
+  cursor: pointer;
 }
 
 /* Styling for radio buttons: */
