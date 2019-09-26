@@ -7,34 +7,25 @@ class TabContent extends Component {
     constructor(props) {
         super(props)
         this.state = {
-            categoryData: this.props.categoryData,
             imgID: 1,
             audio: "",
             textID: 1,
             image: "",
-            isPlaying: false,
-            allText: [{author: "",
-                        text: ""
-                    }]
+            allText: [{
+                author: "",
+                text: ""
+            }]
         }
-
-
 
     }
     handlePlay(){
         var object = this.refs.Player;
-        if(!this.state.isPlaying){
+        if(object.paused){
             object.play()
         }
         else{
             object.pause()
         }
-
-        this.setState(prevState =>({
-            isPlaying: !prevState.isPlaying
-            })
-        )
-
     }
 
     // Fetching images using AJAX and fetch() function
