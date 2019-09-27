@@ -1,0 +1,36 @@
+{
+  "success": true,
+
+  "data": {
+    "limericks":[
+        {
+            "id": "1",
+            "author": "Robert Graves",
+            "text": "Through long nursery nights he stood\nBy my bed unwearying,\nLoomed gigantic, formless, queer,\nPurring in my haunted ear\nThat same hideous nightmare thing,\nTalking, as he lapped my blood,\nIn a voice cruel and flat,\nSaying for ever, “Cat! … Cat! … Cat!…”"
+        },
+
+        {
+          "id": "2",
+          "author": "Conrad Aiken",
+          "text": "What shape was this who came to us,\nWith basilisk eyes so ominous,\nWith mouth so sweet, so poisonous,\nAnd tortured hands so pale?\nWe saw her wavering to and fro,\nThrough dark and wind we saw her go;\nYet what her name was did not know;\nAnd felt our spirits fail."
+        },
+
+        {
+          "id": "3",
+          "author": "Mary Elisabeth Coleridge",
+          "text": "The cutting wind is a cruel foe.\nI dare not stand in the blast.\nMy hands are stone, and my voice a groan,\nAnd the worst of death is past.\nI am but a little maiden still,\nMy little white feet are sore.\nOh, lift me over the threshold, and let me in at the door!"
+        },
+
+        {
+          "id": "4",
+          "author": "Edna St. Vincent Millay",
+          "text": " I knew her for a little ghost\nThat in my garden walked;\nThe wall is high, higher than most\nAnd the green gate was locked."
+        }
+
+
+
+
+    ]
+  }
+
+}

@@ -2,12 +2,15 @@
   "name": "prosjekt_2",
   "version": "0.1.0",
   "private": true,
-  "homepage" : "http://it2810-39.idi.ntnu.no/prosjekt2",
+  "homepage": "http://it2810-39.idi.ntnu.no/prosjekt2",
   "dependencies": {
+    "axios": "^0.19.0",
     "react": "^16.9.0",
     "react-dom": "^16.9.0",
     "react-scripts": "3.1.1",
-    "react-tabs": "^3.0.0"
+    "react-svg": "^10.0.21",
+    "react-tabs": "^3.0.0",
+    "react-test-renderer": "^16.9.0"
   },
   "scripts": {
     "start": "react-scripts start",
@@ -16,9 +19,6 @@
     "eject": "react-scripts eject",
     "singlePath": "rc-autocomplete --src 'node_modules/react-toolbox/components/**/*.js'",
     "generate": "rc-autocomplete"
-
-
-
   },
   "eslintConfig": {
     "extends": "react-app"

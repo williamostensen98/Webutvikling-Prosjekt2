@@ -1,30 +1,77 @@
 const categoryData = [
     {
         id: 1,
-        mediaLabel: "Graphics",
-        categories : [
-            "Animals",
-            "Cars",
-            "Nature",
-        ]
+        mediaLabel: "Images",
+        categories :[
+            {
+                id: 1,
+                text: "Animals",
+                name: "animals",
+                checked: true,
 
+            },
+            {
+                id: 2,
+                text: "Vehicles",
+                name: "vehicles",
+                checked: false,
+            },
+            {
+                id: 3,
+                text: "Nature",
+                name: "nature",
+                checked: false,
+            }
+        ]
     },
     {
         id: 2,
         mediaLabel: "Sounds",
         categories : [
-            "Animals",
-            "Cars",
-            "Nature",
+            {
+                id: 1,
+                text: "Cartoons",
+                name: "cartoons",
+                checked: true
+            },
+            {
+                id: 2,
+                text: "Jazz",
+                name: "jazz",
+                checked: false
+            },
+            {
+                id: 3,
+                text: "Horror",
+                name: "horror",
+                checked: false
+            }
+
         ]
     },
     {
         id: 3,
         mediaLabel: "Texts",
         categories : [
-            "Animals",
-            "Cars",
-            "Nature",
+            {
+                id: 1,
+                text: "Animals",
+                name: "animals",
+                checked: true
+            },
+            {
+                id: 2,
+                text: "Creepy",
+                name: "creepy",
+                checked: false
+            },
+            {
+                id: 3,
+                text: "Jokes",
+                name: "jokes",
+                checked: false
+            }
+
         ]
     }
 ]

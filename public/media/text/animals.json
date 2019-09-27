@@ -1,0 +1,37 @@
+{
+  "success": true,
+
+  "data": {
+    "limericks":[
+        {
+            "id": "1",
+            "author": "Anonymous",
+            "text": "A mouse in her room woke Miss Doud\nWho was frightened and screamed very loud\nThen a happy thought hit her\nTo scare off the critter\nShe sat up in bed and just meowed!"
+        },
+
+        {
+          "id": "2",
+          "author": "Anonymous",
+          "text": "A dinosaur stomped into a mall\nwhere people are tiny and small\nNow why did you think\nI was really extinct\nthe dinosaur roared with a drawl."
+        },
+
+        {
+          "id": "3",
+          "author": "Anonymous",
+          "text": "There was a fat cat on a mat\nWho liked to chase mice named Pat.\nHe chased them around\nAnd fell on the ground\nAnd smashed them until they were flat!"
+        },
+
+        {
+          "id": "4",
+          "author": "Anonymous",
+          "text": "There once was a snake named Lena\nWho swallowed a concertina\nAnd when she was squeezed\nWay up in the trees\nShe played the macarena."
+        }
+
+
+
+
+
+    ]
+  }
+
+}

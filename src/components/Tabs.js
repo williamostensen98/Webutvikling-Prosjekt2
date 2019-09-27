@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
 import Tab from "./Tab";
+import TabContent from "./TabContent"
 import PropTypes from 'prop-types'; // Read more about PropTypes library here: https://reactjs.org/docs/typechecking-with-proptypes.html
 // Src for inspiration for tabs: https://alligator.io/react/tabs-component/
 
@@ -8,10 +9,11 @@ class Tabs extends Component {
         children: PropTypes.instanceOf(Array).isRequired,
     }
 
+
     constructor(props) {
         super(props)
         this.state = {
-            activeTab: this.props.children[0].props.label,
+                activeTab: this.props.children[0].props.label,
         };
     }
 
@@ -20,27 +22,25 @@ class Tabs extends Component {
     }
 
     // onClickTabItem as an arrow function:
-    // onClickTabItem = (tab) => {
-    //     this.setState({ activeTab: tab });
-    // }
     // The advantage of writing the method as an arrow function is that you dont have to bind the function in the constructor
 
     render() {
         const {
-          onClickTabItem,
-          props: {
-            children,
-          },
-          state: {
-            activeTab,
-          }
+            onClickTabItem,
+            props: {
+              children,
+            },
+            state: {
+              activeTab,
+            }
         } = this;
+
 
         return (
           <div className="tabs">
             <ol className="tab-list">
               {children.map((child) => {
-                const { label } = child.props;
+                const label = child.props.label;
 
                 return (
                   <Tab
@@ -58,6 +58,13 @@ class Tabs extends Component {
                 return child.props.children;
               })}
             </div>
+            <div label="1">
+                <TabContent
+                    activeTab={this.state.activeTab} //tall
+                    categoryData={this.props.categoryData} //henter fra
+                    selectedButton={this.props.selectedButton} //button labelet
+                />
+              </div>
           </div>
         );
     }

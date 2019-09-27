@@ -2,8 +2,7 @@ import React, {Component} from 'react';
 import Header from './components/Header';
 import Tabs from './components/Tabs'
 import './css/main.css';
-import { render } from "react-dom";
-import TabContent from "./components/TabContent"
+// import { render } from "react-dom";
 import Footer from "./components/Footer"
 import MediaCategory from "./components/MediaCategory"
 import catData from "./categoryData"
@@ -13,67 +12,145 @@ class App extends Component {
     constructor(props) {
         super(props)
         this.state = {
-            data: catData
+            data: catData,
+            selectedButton: {
+                image: "Animals",
+                sound: "Cartoons",
+                text: "Animals"
+            },
+            selected: [0, 0, 0],
+            hasFavorite: localStorage.getItem('hasFavorite'),
+            clicks: Number(sessionStorage.getItem('clicks')),
+            loadedPictures: [
+
+            ]
         }
     }
 
+    incrementClick = (prevState) => {
+        sessionStorage.setItem('clicks', this.state.clicks + 1)
+        this.setState({
+            clicks: this.state.clicks + 1
+        })
+    }
+
+    handleRadioChange = (button, i) => {
+        const sel = [...[], ...this.state.selected];
+        if (button.mediaLabel === "Images") {
+            sel[0] = i;
+            this.setState( prevState => ({
+                selectedButton: {
+                    sound: prevState.selectedButton.sound,
+                    image: button.categories[i].text,
+                    text: prevState.selectedButton.text
+                },
+                selected: sel,
+            }))
+        }
+        if (button.mediaLabel === "Sounds") {
+            sel[1] = i;
+            this.setState(prevState => ({
+                selectedButton: {
+                    sound: button.categories[i].text,
+                    image: prevState.selectedButton.image,
+                    text: prevState.selectedButton.text
+                },
+                selected: sel,
+            }))
+        }
+        if (button.mediaLabel === "Texts") {
+            sel[2] = i;
+            this.setState(prevState => ({
+                selectedButton: {
+                    text: button.categories[i].text,
+                    image: prevState.selectedButton.image,
+                    sound: prevState.selectedButton.sound
+                },
+                selected: sel,
+            }))
+        }
+    }
+
+    handleClick = () => {
+        localStorage.setItem('favoriteImage', this.state.selectedButton.image)
+        localStorage.setItem('favoriteSound', this.state.selectedButton.sound)
+        localStorage.setItem('favoriteText', this.state.selectedButton.text)
+        localStorage.setItem('hasFavorite', true)
+        this.setState({
+            hasFavorite: true
+        })
+    }
+
+    applyFavorite = () => {
+        this.setState({
+            selectedButton: {
+                image: localStorage.getItem('favoriteImage'),
+                text: localStorage.getItem('favoriteText'),
+                sound: localStorage.getItem('favoriteSound')
+            },
+            selected: [
+                this.state.data[0].categories.findIndex((el) => el.text === localStorage.getItem('favoriteImage')),
+                this.state.data[1].categories.findIndex((el) => el.text === localStorage.getItem('favoriteSound')),
+                this.state.data[2].categories.findIndex((el) => el.text === localStorage.getItem('favoriteText'))
+            ]
+        })
+    }
+
+
+    handleRemove = () => {
+        this.setState({
+            hasFavorite: false
+        })
+        localStorage.clear()
+    }
+
     render() {
-        const mediaCategories = this.state.data.map(data =>
+        const mediaCategories = this.state.data.map((data,i) =>
             <MediaCategory
                 mediaLabel={data.mediaLabel}
-                id={data.id}
+                key={data.id}
                 categories={data.categories}
+                handleRadioChange={this.handleRadioChange}
+                index={this.state.selected[i]}
             />);
         return (
-            <div>
-                <Header headerText="Welcome world!"/>
+            <div onClick={this.incrementClick}>
+                <Header headerText="IT2810 - Project 2"/>
                 <div className="main-content">
-                    <Tabs>
-                        <div label="1">
-                            <TabContent
-                                cx="50"
-                                cy="50"
-                                r="50"
-                                fill="#03DAC6"
-                            />
-                        </div>
-                        <div label="2">
-                            <TabContent
-                                cx="100"
-                                cy="150"
-                                r="50"
-                                fill="#CF6679"
-                            />
-                        </div>
-                        <div label="3">
-                            <TabContent
-                                cx="175"
-                                cy="50"
-                                r="50"
-                                fill="#BB86FC"
-                            />
-                        </div>
-                        <div label="4">
-                            <TabContent
-                                cx="250"
-                                cy="150"
-                                r="50"
-                                fill="#3700B3"
-                            />
-                        </div>
+
+                    <Tabs
+                        mediaCategories={this.state.data}
+                        selectedButton={this.state.selectedButton}
+                        hasFavorite={this.state.hasFavorite}
+                    >
+                        <div label="1"/>
+                        <div label="2"/>
+                        <div label="3"/>
+                        <div label="4"/>
                     </Tabs>
                     <div className="media-categories">
-                    {mediaCategories}
+                        <div className="categories">{mediaCategories}</div>
+
+                        <div className="buttons">
+                            {this.state.hasFavorite
+                                ? <button onClick={this.handleRemove}>Remove favorite</button>
+                                : <button onClick={this.handleClick}>Add to favorite</button>
+                            }
+                            {this.state.hasFavorite
+                                ? <button onClick={this.applyFavorite}>Apply favorite</button>
+                                : null
+                            }
+                            <p>Your clicks: {this.state.clicks}</p>
+
+
+                        </div>
                     </div>
                 </div>
-                <Footer />
+                <Footer footerText="NTNU @ Gruppe 39"/>
             </div>
         );
     }
 
 }
-// const container = document.createElement('div');
-// document.body.appendChild(container);
-// render(<App />, container);
 
 export default App;
