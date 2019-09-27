@@ -100,10 +100,10 @@ Siden er blitt testet på 3 ulike enheter, iPhone 7, iPad Pro og PC (desktop), o
 Hvordan dette funker og er satt opp kan man lese om under _Responsive Web Design_. 
 
 
-### Bruk av Git
+### Bruk av Git og GitLab
 Gruppen har hatt en aktiv bruk av Git under utviklingen av webapplikasjonen. Det ble tidlig bestemt at gruppen skulle bruke branchen _dev_ som en "midlertidig masterbranch", og ta utgangspunkt i denne ved merging fra andre brancher. Det var ønskelig å merge _dev_ med _master_ etter at det var sikkerhet rundt at all koden fungerte som den skulle. Ellers har det vært forsøkt på en konvensjon rundt navngivning av andre brancher som innebærer at navnet på branchen skal si noe om hva som jobbes med.
 
-Arbeidsoppgaver har blitt uttrykt som issues på GitLab, men det har vært litt uryddighet rundt hvordan disse skal formuleres og på hvilket språk. Det har likevel ikke vært til hinder for gjennomførelsen av prosjektet. Issuene ble closet når branchen som gjorde dens oppgave ble fullført og merget med _dev_, men dette måtte gjøres manuelt da det ikke skjedde til tross for at issuenummeret ble skrevet i commit-meldingen. 
+Arbeidsoppgaver har blitt uttrykt som issues på GitLab, men det har vært litt uryddighet rundt hvordan disse skal formuleres og på hvilket språk. Det har likevel ikke vært til hinder for gjennomførelsen av prosjektet. Issuene ble closet når branchen som gjorde dens oppgave ble fullført og merget med _dev_, men dette måtte gjøres manuelt da det ikke skjedde til tross for at issuenummeret ble skrevet i commit-meldingen. Dette fant vi ut i ettertid at var på grunn av at vi ikke hadde satt _dev_-branchen som default.
 
      
          
